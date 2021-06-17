@@ -59,7 +59,12 @@ const Experience = () => {
             <h2 className={classes.h2}>
                 Where I've Worked
             </h2>
+            <div className={classes.inner}>
+                <p> yo</p>
+            </div>
         </div>
+
+
     );
 };
 

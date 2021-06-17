@@ -106,13 +106,14 @@ const useStyles = makeStyles(theme => ({
     imageContainer: {
         position: 'relative',
         maxWidth: '300px',
+        height: 'fit-content',
     },
     imageWrapper: {
-        display: 'block',
+        display: 'flex',
         position: 'relative',
         boxShadow: '0 10px 30px -15px #37474f',
         width: '100%',
-        height: '81.8%',
+        minWidth: '200px',
         borderRadius: '4px',
         backgroundColor: '#4e8871',
         '&:hover, &:focus': {
@@ -161,9 +162,9 @@ const About = () => {
     const classes = useStyles();
     const revealContainer = useRef(null);
 
-      useEffect(() => {
+    useEffect(() => {
         sr.reveal(revealContainer.current, configs.srConfig());
-      }, []);
+    }, []);
 
     const skills = ['JavaScript (ES6+)', 'React', 'Node.js', 'MaterialUI', 'Java', 'Unity'];
 
@@ -175,8 +176,8 @@ const About = () => {
                 <div>
                     <div>
                         <p className={classes.p}>
-                            Hello! I'm Eric and welcome to my website. I've always enjoyed creating things, so naturally I branched into something I had spent hours on: computers. 
-                            I was simply amazed by how some lines on a page could transition to an interactive, useful interface; 
+                            Hello! I'm Eric and welcome to my website. I've always enjoyed creating things, so naturally I branched into something I had spent hours on: computers.
+                            I was simply amazed by how some lines on a page could transition to an interactive, useful interface;
                             this fascination was how I ended up in CS and continued my coding journey. Now that I have graduated from New York University (December 2020), I hope to
                             follow my passions in game development and web application development.
                         </p>
@@ -199,15 +200,12 @@ const About = () => {
 
                 <div className={classes.imageContainer}>
                     <div className={classes.imageWrapper}>
-                        <div className={classes.anotherWrapper}>
-                            <img
-                                className={classes.image}
-                                src={profileImage}
-                                width={'100%'}
-                                alt="Headshot"
-                            />
-                        </div>
-
+                        <img
+                            className={classes.image}
+                            src={profileImage}
+                            width={'100%'}
+                            alt="Headshot"
+                        />
                     </div>
                 </div>
             </div>
