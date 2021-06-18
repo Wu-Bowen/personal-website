@@ -50,11 +50,13 @@ const useStyles = makeStyles(theme => ({
         },
     },
     link: {
+        display: 'inline-block',
         '&:hover': {
             color: theme.palette.primary.textColor,
         }
     },
     navButton: {
+        display: 'inline-block',
         color: theme.palette.primary.textColor,
         border: '1px solid #77ddaa',
         borderRadius: "2px",
@@ -134,7 +136,7 @@ const Navbar = ({ isHome }) => {
                 <div className={classes.toolbarDiv}>
                     <TransitionGroup component={null}>
                         {isMounted && (
-                            <CSSTransition classNames={isHome ? 'fade' : ''} timeout={isHome ? loaderDelay : 0}>
+                            <CSSTransition classNames={isHome ? 'fadedown' : ''} timeout={isHome ? loaderDelay : 0}>
 
                                 <div className={classes.logo}
                                     to="/"
@@ -163,23 +165,17 @@ const Navbar = ({ isHome }) => {
                                             </CSSTransition>
                                         ))}
                                 </TransitionGroup>
-                                {/* <Link smooth to="/#about" activeStyle={activeStyle} className={classes.link}>
-                                    <span className={classes.highlight}> 01. </span> About
-                                </Link> */}
-                                {/* <Link smooth to="/#jobs" activeStyle={activeStyle} className={classes.link}>
-                                    <span className={classes.highlight}> 02. </span> Experience
-                                </Link>
-                                <Link smooth to="/#work" activeStyle={activeStyle} className={classes.link}>
-                                    <span className={classes.highlight}> 03. </span> Work
-                                </Link>
-                                <Link smooth to="/#journey" activeStyle={activeStyle} className={classes.link}>
-                                    <span className={classes.highlight}> 04. </span> Contact
-                                </Link> */}
-                                <a href={Pdf} rel="noopener noreferrer" target="_blank">
-                                    <Button className={classes.navButton} >
-                                        Resume
-                                    </Button>
-                                </a>
+                                <TransitionGroup component={null}>
+                                    {isMounted && (
+                                        <CSSTransition classNames={isHome ? 'fadedown' : ''} timeout={isHome ? loaderDelay : 0}>
+                                            <a href={Pdf} rel="noopener noreferrer" target="_blank" style={{ transitionDelay: `${isHome ? configs.navLinks.length * 100 : 0}ms` }}>
+                                                <Button className={classes.navButton} >
+                                                    Resume
+                                                </Button>
+                                            </a>
+                                        </CSSTransition>
+                                    )}
+                                </TransitionGroup>
                             </nav>
                         </Grid>
                     </Grid>

@@ -16,6 +16,14 @@ const useStyles = makeStyles(theme => ({
         padding: '100px 0 1000px',
         // CHANGE PADDDING
     },
+    tabList:{
+        position: 'relative', 
+        zIndex: '3',
+        width: 'max-content',
+        padding: '0',
+        margin: '0',
+        lisStyle: 'none',
+    },
     h2: {
         display: 'flex',
         alignItems: 'center',
@@ -53,6 +61,8 @@ const useStyles = makeStyles(theme => ({
         }
     },
     tabButton: {
+        border: 0,
+        background: 'none',
         display: 'flex',
         textDecoration: 'none',
         textDecorationSkipInk: 'auto',
@@ -66,10 +76,22 @@ const useStyles = makeStyles(theme => ({
         fontSize: '13px',
         textAlign: 'left',
         whiteSpace: 'nowrap',
-        '&:hover, &:focus' : {
+        '&:hover, &:focus': {
             backgroundColor: theme.palette.secondary.mainLowest,
             outline: 'none',
         }
+    },
+    activeTab: {
+        position: 'absolute',
+        top: '0px',
+        left: '0px',
+        zIndex: '10',
+        width: '2px',
+        height: '42px',
+        borderRadius: '4px',
+        background: theme.palette.primary.textColor,
+        transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
+        transitionDelay: '0.1s',
     }
 }));
 const Experience = () => {
@@ -91,7 +113,7 @@ const Experience = () => {
                 setFocusedTab(focusedTab + 1);
                 break;
             }
-            case KEY_CODES.ENTER: { 
+            case KEY_CODES.ENTER: {
                 setCurrentTab(focusedTab);
                 // setCurrentTab(focusedTab)
             }
@@ -124,20 +146,20 @@ const Experience = () => {
                 Where I've Worked
             </h2>
             <div className={classes.inner}>
-                <div role="tablist" aria-label="Job tabs" onKeyDown={(e) => { onKeyDown(e) }}>
+                <div className= {classes.tabList} role="tablist" aria-label="Job tabs" onKeyDown={(e) => { onKeyDown(e) }}>
                     {jobData?.companies && jobData.companies.map((company, i) => {
-                        return <div
+                        return <button
                             key={i}
                             className={classes.tabButton}
                             style={currentTab === i ? ({
                                 color: '#77ddaa',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
                             }
                             ) : ({
                                 color: '#8892b0',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
                             })}
-                            onClick = {()=>{setCurrentTab(i)}}
+                            onClick={() => { setCurrentTab(i) }}
                             ref={el => (tabs.current[i] = el)}
                             id={`tab-${i}`}
                             role="tab"
@@ -146,8 +168,9 @@ const Experience = () => {
                             aria-controls={`panel-${i}`}
                         >
                             <span> {company.companyName} </span>
-                        </div>
+                        </button>
                     })}
+                    <div className={classes.activeTab} style={{transform: `translateY(${currentTab * 42}px)`}}/>
                 </div>
             </div>
         </div>
