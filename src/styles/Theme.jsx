@@ -13,7 +13,6 @@ const theme = createMuiTheme({
             mainLower: 'rgba(204,214,246,.6)',
             mainLowest: 'rgba(204,214,246,.15)',
             textColor: '#8892b0',
-            // dark: will be calculated from palette.secondary.main,
         },
         background: blueGrey[900],
     },
