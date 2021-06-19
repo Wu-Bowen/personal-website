@@ -16,12 +16,14 @@ const useStyles = makeStyles(theme => ({
             content: '""',
             display: 'block',
             width: '1px',
-            height: '180px',
+            height: '80px',
             margin: '0 auto',
             backgroundColor: theme.palette.secondary.main,
         },
     },
     list: {
+        width:'20px',
+        paddingLeft:'10px',
         marginBottom: '10px',
         '&:last-of-type': {
             marginBottom: '40px',

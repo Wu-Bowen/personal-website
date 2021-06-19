@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
         width: '80vw',
         maxWidth: '1000px',
         padding: '100px 0 1000px',
+        color: theme.palette.secondary.main
         // CHANGE PADDDING
     },
     tabList: {
@@ -31,7 +32,6 @@ const useStyles = makeStyles(theme => ({
         fontSize: 'clamp(26px,5vw,32px)',
         width: '100%',
         whiteSpace: 'nowrap',
-        color: theme.palette.secondary.main,
         '&::before': {
             position: 'relative',
             top: '4px',
@@ -55,9 +55,9 @@ const useStyles = makeStyles(theme => ({
     },
     inner: {
         display: 'flex',
-        [theme.breakpoints.down('md')]: {
-            display: 'block',
-        }
+        // [theme.breakpoints.down('md')]: {
+        //     display: 'block',
+        // }
     },
     tabButton: {
         border: 0,
@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
         textDecorationSkipInk: 'auto',
         alignItems: 'center',
         width: '100%',
-        height: '42px',
+        height: '50px',
         padding: '0 20px 2px',
         borderLeft: '2px solid rgba(204, 214, 246, .15)',
         transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
@@ -86,7 +86,7 @@ const useStyles = makeStyles(theme => ({
         left: '0px',
         zIndex: '10',
         width: '2px',
-        height: '42px',
+        height: '50px',
         borderRadius: '4px',
         background: theme.palette.primary.textColor,
         transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
@@ -106,9 +106,7 @@ const useStyles = makeStyles(theme => ({
         marginBottom: '2px',
         fontSize: '22px',
         fontWeight: '500',
-        lineHeight: '1.3',
-        color: theme.palette.secondary.main
-    },
+        lineHeight: '1.3',    },
     anchor: {
         display: 'inline-block',
         textDecoration: 'none',
@@ -126,6 +124,28 @@ const useStyles = makeStyles(theme => ({
             width: '100%',
         }
     },
+    range: {
+        marginBottom: '25px',
+        color: theme.palette.secondary.textColor,
+        fontFamily: theme.fontSecondary,
+        fontSize: '13px',
+    },
+    descriptionContainer: {
+        padding: '0',
+        margin: '0',
+        listStyle: 'none',
+    },
+    descriptionContent: {
+        paddingLeft: '20px',
+        marginBottom: '18px',
+        '&::before' : {
+            content: '"▹"',
+            position: 'absolute',
+            left: '0px',
+            color: theme.palette.primary.textColor,
+        },
+
+    }
 }));
 const Experience = () => {
     const classes = useStyles();
@@ -205,7 +225,7 @@ const Experience = () => {
                             </button>
                         )
                     })}
-                    <div className={classes.activeTab} style={{ transform: `translateY(${currentTab * 42}px)` }} />
+                    <div className={classes.activeTab} style={{ transform: `translateY(${currentTab * 50}px)` }} />
                 </div>
 
 
@@ -230,9 +250,20 @@ const Experience = () => {
                                         </a>
                                     </span>
                                 </h3>
-
-
-
+                                <p className="range">
+                                    <span className={classes.range}>
+                                        {company.range}
+                                    </span>
+                                </p>
+                                <ul className={classes.descriptionContainer}>
+                                    {company.roleDescription.map((description, j) => {
+                                        return (
+                                            <li className={classes.descriptionContent}>
+                                                {description}
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
                             </div>
 
                         )

@@ -50,7 +50,9 @@ const useStyles = makeStyles(theme => ({
         },
     },
     link: {
+        padding: '10px',
         display: 'inline-block',
+        border: '1px solid transparent',
         '&:hover': {
             color: theme.palette.primary.textColor,
         }
@@ -90,7 +92,7 @@ const Navbar = ({ isHome }) => {
     const classes = useStyles();
     const activeStyle = {
         color: '#77ddaa',
-        fontWeight: 'bold'
+        border: '1px dashed #77ddaa',
     };
     const location = useLocation();
     const [color, setColor] = useState('none');

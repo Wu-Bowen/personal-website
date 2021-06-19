@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         width: '40px',
         position: 'fixed',
         bottom: '0',
-        left: '40px',
+        left: '15px',
         right: 'auto',
         zIndex: '10',
     },
@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
         position: 'fixed',
         bottom: '0',
         left: 'auto',
-        right: '40px',
+        right: '15px',
         zIndex: '10',
     },
 }));
