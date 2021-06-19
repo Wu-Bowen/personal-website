@@ -9,6 +9,7 @@ import Loader from './Loader';
 import Intro from './Main/Intro';
 import About from './Main/About';
 import Experience from './Main/Experience';
+import Work from './Main/Work';
 // import Footer from "./Footer";
 
 const useStyle = makeStyles(theme => ({
@@ -17,7 +18,6 @@ const useStyle = makeStyles(theme => ({
         margin: '0px',
         minHeight:'100%',
         width: '100%',
-        display: 'flex',
         lineHeight: '1.3',
         [theme.breakpoints.down('xs')]: {
             flexDirection: 'column',
@@ -51,6 +51,7 @@ const Website = () => {
                             <Intro />
                             <About />
                             <Experience />
+                            <Work />
                         </Home>
                     </div>
                 </div>

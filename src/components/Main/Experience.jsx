@@ -12,9 +12,8 @@ const useStyles = makeStyles(theme => ({
         margin: '0px auto',
         width: '80vw',
         maxWidth: '1000px',
-        padding: '100px 0 1000px',
+        padding: '100px 0',
         color: theme.palette.secondary.main
-        // CHANGE PADDDING
     },
     tabList: {
         position: 'relative',

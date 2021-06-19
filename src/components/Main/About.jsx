@@ -111,6 +111,8 @@ const useStyles = makeStyles(theme => ({
     imageWrapper: {
         display: 'flex',
         position: 'relative',
+        maxWidth: '300px',
+        height: 'fit-content',
         boxShadow: '0 10px 30px -15px #37474f',
         width: '100%',
         minWidth: '200px',
@@ -146,7 +148,7 @@ const useStyles = makeStyles(theme => ({
             top: '20px',
             left: '20px',
             zIndex: '0',
-        }
+        },
     },
     image: {
         position: 'relative',
@@ -169,36 +171,36 @@ const About = () => {
     const skills = ['JavaScript (ES6+)', 'React', 'Node.js', 'MaterialUI', 'Java', 'Unity'];
 
     return (
-        <div className={classes.aboutContainer} id="about" ref={revealContainer}>
-            <h2 className={classes.h2}>About Me</h2>
+        <div>
+            <div className={classes.aboutContainer} id="about" ref={revealContainer}>
+                <h2 className={classes.h2}>About Me</h2>
 
-            <div className={classes.inner}>
-                <div>
+                <div className={classes.inner}>
                     <div>
-                        <p className={classes.p}>
-                            Hello! I'm Eric and welcome to my website. I've always enjoyed creating things, so naturally I branched into something I had spent hours on: computers.
-                            I was simply amazed by how some lines on a page could transition to an interactive, useful interface;
-                            this fascination was how I ended up in CS and continued my coding journey. Now that I have graduated from New York University (December 2020), I hope to
-                            follow my passions in game development and web application development.
-                        </p>
+                        <div>
+                            <p className={classes.p}>
+                                Hello! I'm Eric and welcome to my website. I've always enjoyed creating things, so naturally I branched into something I had spent hours on: computers.
+                                I was simply amazed by how some lines on a page could transition to an interactive, useful interface;
+                                this fascination was how I ended up in CS and continued my coding journey. Now that I have graduated from New York University (December 2020), I hope to
+                                follow my passions in game development and web application development.
+                            </p>
 
-                        <p className={classes.p}>
-                            Fast-forward to today, and I've had the privilege of working at{' '}
-                            <a className={classes.anchor} href="https://www.chinaunicom.com.hk/en/global/home.php" rel="noopener noreferrer" target="_blank">a telecom company</a> and {' '}
-                            <a className={classes.anchor} href="https://www.pfizer.com/" rel="noopener noreferrer" target="_blank">a pharmaceutical giant</a>. Currently, I am a part of the Credit Risk Team at {' '}
-                            <a className={classes.anchor} href="https://about.bankofamerica.com/en" rel="noopener noreferrer" target="_blank">Bank of America</a> developing internal tools to measure capital
-                            risk of numerous investment companies.
-                        </p>
+                            <p className={classes.p}>
+                                Fast-forward to today, and I've had the privilege of working at{' '}
+                                <a className={classes.anchor} href="https://www.chinaunicom.com.hk/en/global/home.php" rel="noopener noreferrer" target="_blank">a telecom company</a> and {' '}
+                                <a className={classes.anchor} href="https://www.pfizer.com/" rel="noopener noreferrer" target="_blank">a pharmaceutical giant</a>. Currently, I am a part of the Credit Risk Team at {' '}
+                                <a className={classes.anchor} href="https://about.bankofamerica.com/en" rel="noopener noreferrer" target="_blank">Bank of America</a> developing internal tools to measure capital
+                                risk of numerous investment companies.
+                            </p>
 
-                        <p className={classes.p}>Here are a few technologies I've been working with recently:</p>
+                            <p className={classes.p}>Here are a few technologies I've been working with recently:</p>
+                        </div>
+
+                        <ul className={classes.list}>
+                            {skills && skills.map((skill, i) => <li className={classes.listElement} key={i}>{skill}</li>)}
+                        </ul>
                     </div>
 
-                    <ul className={classes.list}>
-                        {skills && skills.map((skill, i) => <li className={classes.listElement} key={i}>{skill}</li>)}
-                    </ul>
-                </div>
-
-                <div className={classes.imageContainer}>
                     <div className={classes.imageWrapper}>
                         <img
                             className={classes.image}
