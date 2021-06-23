@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import profileImage from './../../files/profileImage.jpg'
+import featuredData from './../data/featuredData';
 
-// import { srConfig } from '@config';
 import sr from './../../utils/sr';
 import configs from './../../config'
 
 const useStyles = makeStyles(theme => ({
-    aboutContainer: {
+    projectContainer: {
         margin: '0px auto',
         width: '80vw',
         maxWidth: '1000px',
@@ -44,24 +43,114 @@ const useStyles = makeStyles(theme => ({
             backgroundColor: theme.palette.secondary.mainLowest,
         }
     },
+    projects: {
+        listStyle: 'none',
+        padding: '0px',
+        margin: '0px',
+        marginBlockStart: '1em',
+        marginBlockEnd: '1em',
+        marginInlineStart: '0px',
+        marginInlineEnd: '0px',
+        paddingInlineStart: '40px',
+    },
+    listItem: {
+        position: 'relative',
+        diaply: 'grid',
+        gridGap: '10px',
+        gridTemplateColumns: 'repeat(12, 1fr)',
+        alignItems: 'center',
+        '&:not(:last-of-type)': {
+            marginBottom: '100px',
+        },
+    },
+    projectContentEven: {
+        position: 'relative',
+        gridColumn: '1 / 7',
+        gridRow: '1 / -1'
+    },
+    projectContentOdd: {
+        position: 'relative',
+        gridColumn: '7 / -1',
+        gridRow: '1 / -1',
+        textAlign: 'right',
+    },
+    featuredProject: {
+        margin: '10px 0px',
+        color: theme.palette.primary.textColor,
+        fontFamily: theme.fontSecondary,
+        fontSize: '13px',
+        fontWeight: '400px',
+    },
+    projectTitle: {
+        color: theme.palette.secondary.main,
+        fontSize: 'clamp(24px, 5vw, 28px)'
+        
+    },
+    // titleAnchor: {
+    //     position: 'static',
+    //     '&::before': {
+    //         content: '""',
+    //         display: 'block',
+    //         position: 'absolute',
+    //         zIndex: '0px',
+    //         width: '100%',
+    //         height: '100%',
+    //         top: '0px',
+    //         left: '0px',
+    //     }
+    // }
+    projectDescription: {
+        boxShadow: '0 10px 30px -15px #006064',
+        position: 'relative',
+        zIndex: '2',
+        padding: '25px',
+        borderRadius: '4px',
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.secondary.mainLower,
+        fontSize: '18px',
+
+    },
 }));
 const Work = () => {
     const classes = useStyles();
-    const revealContainer = useRef(null);
+    const revealTitle = useRef(null);
+    const revealProjects = useRef([]);
 
     useEffect(() => {
-        sr.reveal(revealContainer.current, configs.srConfig());
+        sr.reveal(revealTitle.current, configs.srConfig());
+        revealProjects.current.forEach((ref, i) => sr.reveal(ref, configs.srConfig(i * 100)));
     }, []);
 
-    const skills = ['JavaScript (ES6+)', 'React', 'Node.js', 'MaterialUI', 'Java', 'Unity'];
 
     return (
-        <div className={classes.aboutContainer} id="about" ref={revealContainer}>
+        <div className={classes.projectContainer} id="projects" ref={revealTitle}>
             <h2 className={classes.h2}>Some Things I've Built</h2>
+            <ul className={classes.projects}>
 
-            <div className={classes.inner}>
+                {featuredData?.projects && featuredData.projects.map((project, i) => {
+                    return (
+                        <li className={classes.listItem}>
+                            <div key={i} className={classes.project} ref={el => (revealProjects.current[i] = el)}>
+                                <div className={i % 2 == 1 ? classes.projectContentEven : classes.projectContentOdd}>
+                                    <div>
+                                        <p className={classes.featuredProject}> Featured Project </p>
+                                        <h3 className={classes.projectTitle}>
+                                            <a className={classes.titleAnchor}>{project.name}</a>
+                                        </h3>
+                                        <div className={classes.projectDescription}>
+                                            <p style={{margin: '0px'}}>
+                                                {project.description}
+                                            </p>
+                                        </div>
+                                    </div>
 
-            </div>
+                                </div>
+                            </div>
+                        </li>
+                    )
+                })}
+
+            </ul>
         </div>
     );
 };

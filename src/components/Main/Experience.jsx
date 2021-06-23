@@ -92,6 +92,7 @@ const useStyles = makeStyles(theme => ({
         transitionDelay: '0.1s',
     },
     tabPanels: {
+        display: 'block',
         position: 'relative',
         width: '100%',
         marginLeft: '20px',
@@ -100,6 +101,8 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
         height: 'auto',
         padding: '10px 5px',
+        minHeight: '350px',
+        // display: 'block',
     },
     h3: {
         marginBottom: '2px',

@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import profileImage from './../../files/profileImage.jpg'
 
-// import { srConfig } from '@config';
 import sr from './../../utils/sr';
 import configs from './../../config'
 

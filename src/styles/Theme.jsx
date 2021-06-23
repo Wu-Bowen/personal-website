@@ -3,7 +3,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: blueGrey[50],
+            main: blueGrey[800],
             textColor: '#77ddaa',
             textColorLower: 'rgba(119, 221, 170, .6)',
             textColorLowest: 'rgba(119, 221, 170, .1)',
