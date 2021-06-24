@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import featuredData from './../data/featuredData';
-
+import Icon from './..//Icons/Icons';
 import sr from './../../utils/sr';
 import configs from './../../config'
 
@@ -47,15 +47,10 @@ const useStyles = makeStyles(theme => ({
         listStyle: 'none',
         padding: '0px',
         margin: '0px',
-        marginBlockStart: '1em',
-        marginBlockEnd: '1em',
-        marginInlineStart: '0px',
-        marginInlineEnd: '0px',
-        paddingInlineStart: '40px',
     },
     listItem: {
         position: 'relative',
-        diaply: 'grid',
+        display: 'grid',
         gridGap: '10px',
         gridTemplateColumns: 'repeat(12, 1fr)',
         alignItems: 'center',
@@ -66,13 +61,17 @@ const useStyles = makeStyles(theme => ({
     projectContentEven: {
         position: 'relative',
         gridColumn: '1 / 7',
-        gridRow: '1 / -1'
+        gridRow: '1 / -1',
+        zIndex: '2',
+        pointerEvents: 'none',
     },
     projectContentOdd: {
         position: 'relative',
-        gridColumn: '7 / -1',
+        gridColumn: '6 / -1',
         gridRow: '1 / -1',
         textAlign: 'right',
+        zIndex: '2',
+        pointerEvents: 'none',
     },
     featuredProject: {
         margin: '10px 0px',
@@ -84,32 +83,115 @@ const useStyles = makeStyles(theme => ({
     projectTitle: {
         color: theme.palette.secondary.main,
         fontSize: 'clamp(24px, 5vw, 28px)'
-        
+
     },
-    // titleAnchor: {
-    //     position: 'static',
-    //     '&::before': {
-    //         content: '""',
-    //         display: 'block',
-    //         position: 'absolute',
-    //         zIndex: '0px',
-    //         width: '100%',
-    //         height: '100%',
-    //         top: '0px',
-    //         left: '0px',
-    //     }
-    // }
+
     projectDescription: {
         boxShadow: '0 10px 30px -15px #006064',
         position: 'relative',
         zIndex: '2',
-        padding: '25px',
+        padding: '15px',
         borderRadius: '4px',
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.secondary.mainLower,
-        fontSize: '18px',
+        fontSize: '14px',
+        transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
+        pointerEvents: 'auto',
+    },
+    techStack: {
+        position: 'relative',
+        zIndex: '2',
+        margin: '25px 0px 10px',
+        padding: '0px',
+        listStyle: 'none',
+        display: 'flex',
+    },
+    techItem: {
+        '&:not(:first-child)' : {
+            margin: '0px 0px 5px 20px',
+        },
+        color: theme.palette.secondary.mainLower,
+        fontSize: '13px',
+        fontFamily: theme.fontSecondary,
+        whiteSpace: 'nowrap',
+    },
+    projectLinks: {
+        pointerEvents: 'auto',
+        display: 'flex',
+        alignItems: 'center',
+        position: 'relative',
+        marginTop: '10px',
+        color: theme.palette.secondary.main,
+        '& a': {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '10px',
+            '& svg': {
+                color: theme.palette.secondary.main,
+                width: '20px',
+                '&:hover, &:focus': {
+                    color: theme.palette.primary.textColor,
+                }
+            }
+
+        }
+    },
+    projectImageEven: {
+        gridColumn: '6 / -1',
+        gridRow: '1 / -1',
+        position: 'relative',
+        zIndex: '1',
+        maxWidth: 'inherit',
+        paddingLeft: '20px',
+        '& a': {
+            '& img': {
+                width: '100%',
+                height: '100%',
+            }
+        }
+    },
+    projectImageOdd: {
+        gridColumn: '1 / 8',
+        gridRow: '1 / -1',
+        position: 'relative',
+        zIndex: '1',
+        maxWidth: 'inherit',
+        '& a': {
+            '& img': {
+                width: '100%',
+                height: '100%',
+            }
+        }
+    },
+    imageContainer: {
+        '& a': {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            backgroundColor: theme.palette.primary.textColor,
+            verticalAlign: 'center',
+            borderRadius: '4px',
+            '& svg': {
+                color: theme.palette.secondary.main,
+                width: '20px',
+            }
+
+        }
 
     },
+    image: {
+        borderRadius: '4px',
+        mixBlendMode: 'multiply',
+        filter: 'grayscale(10%) contrast(1) brightness(120%)',
+        '&:hover, &:focus': {
+            mixBlendMode: 'normal',
+            background: 'transparent',
+            filter: 'none',
+            transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
+            color: theme.palette.primary.textColor,
+        }
+    }
 }));
 const Work = () => {
     const classes = useStyles();
@@ -130,22 +212,73 @@ const Work = () => {
                 {featuredData?.projects && featuredData.projects.map((project, i) => {
                     return (
                         <li className={classes.listItem}>
-                            <div key={i} className={classes.project} ref={el => (revealProjects.current[i] = el)}>
-                                <div className={i % 2 == 1 ? classes.projectContentEven : classes.projectContentOdd}>
-                                    <div>
-                                        <p className={classes.featuredProject}> Featured Project </p>
-                                        <h3 className={classes.projectTitle}>
-                                            <a className={classes.titleAnchor}>{project.name}</a>
-                                        </h3>
-                                        <div className={classes.projectDescription}>
-                                            <p style={{margin: '0px'}}>
-                                                {project.description}
-                                            </p>
-                                        </div>
+                            <div key={i} className={i % 2 == 1 ? classes.projectContentEven : classes.projectContentOdd} ref={el => (revealProjects.current[i] = el)}>
+                                <div>
+                                    <p className={classes.featuredProject}> Featured Project </p>
+                                    <h3 className={classes.projectTitle}>
+                                        <a className={classes.titleAnchor}>{project.name}</a>
+                                    </h3>
+                                    <div className={classes.projectDescription}>
+                                        <p style={{ margin: '0px' }}>
+                                            {project.description}
+                                        </p>
                                     </div>
+                                    {project.stack.length &&
+                                        <ul
+                                            className={classes.techStack}
+                                            style={
+                                                i % 2 == 1 ?
+                                                    {
 
+                                                    } : {
+                                                        justifyContent: 'flex-end'
+                                                    }
+                                            }
+
+                                        >
+                                            {project.stack.map((tech, j) => {
+                                                return (
+                                                    <li className={classes.techItem} key={j}>
+                                                        {tech}
+                                                    </li>
+                                                )
+                                            })}
+
+                                        </ul>
+                                    }
+                                    <div
+                                        className={classes.projectLinks}
+                                        style={i % 2 == 1 ? {
+                                            marginRight: '-10px',
+                                        } : {
+                                            marginLeft: '-10px',
+                                            justifyContent: 'flex-end',
+                                        }}>
+                                        {project.github.length > 0 &&
+                                            <a href={project.github} rel="noopener noreferrer" target="_blank" aria-label="GithubLink">
+                                                <Icon name="GitHub" />
+                                            </a>
+                                        }
+                                        {project.external.length > 0 &&
+                                            <a href={project.github} rel="noopener noreferrer" target="_blank" aria-label="GithubLink">
+                                                <Icon name="Blog" />
+                                            </a>
+                                        }
+                                    </div>
                                 </div>
                             </div>
+                            <div className={i % 2 == 1 ? classes.projectImageEven : classes.projectImageOdd} >
+                                <div className={classes.imageContainer}>
+                                    <a href={project.external ? project.external : project.github ? project.github : '#'} rel="noopener noreferrer" target="_blank" aria-label="GithubLink">
+                                        <img
+                                            className={classes.image}
+                                            src={project.image}
+                                            alt="Headshot"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+
                         </li>
                     )
                 })}
