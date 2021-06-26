@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
         gridTemplateColumns: 'repeat(12, 1fr)',
         alignItems: 'center',
         '&:not(:last-of-type)': {
-            marginBottom: '100px',
+            marginBottom: '150px',
         },
     },
     projectContentEven: {
@@ -95,7 +95,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: '14px',
         transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
         pointerEvents: 'auto',
-        '&:hover, &:focus' :{
+        '&:hover, &:focus': {
             boxShadow: '0 20px 30px -15px rgba(119, 221, 170, .2)',
         }
     },
@@ -108,7 +108,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
     },
     techItem: {
-        '&:not(:first-child)' : {
+        '&:not(:first-child)': {
             margin: '0px 0px 5px 20px',
         },
         color: theme.palette.secondary.mainLower,
@@ -198,10 +198,12 @@ const Work = () => {
     const classes = useStyles();
     const revealTitle = useRef(null);
     const revealProjects = useRef([]);
+    const revealImages = useRef([]);
 
     useEffect(() => {
         sr.reveal(revealTitle.current, configs.srConfig());
         revealProjects.current.forEach((ref, i) => sr.reveal(ref, configs.srConfig(i * 100)));
+        revealImages.current.forEach((ref, i) => sr.reveal(ref, configs.srConfig(i * 100)));
     }, []);
 
 
@@ -268,7 +270,7 @@ const Work = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className={i % 2 == 1 ? classes.projectImageEven : classes.projectImageOdd} >
+                            <div className={i % 2 == 1 ? classes.projectImageEven : classes.projectImageOdd} ref={el => (revealImages.current[i] = el)} >
                                 <div className={classes.imageContainer}>
                                     <a href={project.external ? project.external : project.github ? project.github : '#'} rel="noopener noreferrer" target="_blank" aria-label="GithubLink">
                                         <img

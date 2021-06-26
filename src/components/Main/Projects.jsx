@@ -92,6 +92,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     projectLinks: {
+        zIndex: 2,
         display: 'flex',
         alignItems: 'center',
         marginRight: '-10px',
@@ -124,6 +125,16 @@ const useStyles = makeStyles(theme => ({
             transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
             '&:hover, &:focus': {
                 color: theme.palette.primary.textColor,
+            },
+            '&:before': {
+                content: '""',
+                display: 'block',
+                position: 'absolute',
+                zIndex: '0',
+                width: '100%',
+                height: '100%',
+                top: '0',
+                left: '0',
             }
 
         }
@@ -161,7 +172,11 @@ const Projects = () => {
                                 classNames='fadeup'
                                 timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
                                 exit={false}>
-                                <li className={classes.projectContainer}>
+                                <li
+                                    className={classes.projectContainer}
+                                    ref={el => (revealProjects.current[i] = el)}
+                                    style={{ transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`, }}
+                                >
                                     <div className={classes.project}>
 
                                         <header style={{ width: '100%' }}>
