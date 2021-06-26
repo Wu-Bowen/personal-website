@@ -10,9 +10,8 @@ const useStyles = makeStyles(theme => ({
         margin: '0px auto',
         width: '80vw',
         maxWidth: '1000px',
-        padding: '100px 0 1000px',
+        padding: '100px 0 100px',
     },
-
     h2: {
         display: 'flex',
         alignItems: 'center',
@@ -81,13 +80,12 @@ const useStyles = makeStyles(theme => ({
         fontWeight: '400px',
     },
     projectTitle: {
-        color: theme.palette.secondary.main,
-        fontSize: 'clamp(24px, 5vw, 28px)'
-
+        color: theme.palette.secondary.mainTint,
+        fontSize: 'clamp(20px, 4vw, 26px)'
     },
 
     projectDescription: {
-        boxShadow: '0 10px 30px -15px #006064',
+        boxShadow: '0 20px 30px -15px #37474f',
         position: 'relative',
         zIndex: '2',
         padding: '15px',
@@ -97,6 +95,9 @@ const useStyles = makeStyles(theme => ({
         fontSize: '14px',
         transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
         pointerEvents: 'auto',
+        '&:hover, &:focus' :{
+            boxShadow: '0 20px 30px -15px rgba(119, 221, 170, .2)',
+        }
     },
     techStack: {
         position: 'relative',

@@ -5,6 +5,7 @@ import InstagramIcon from './Instagram'
 import TwitterIcon from './Twitter'
 import LinkedInIcon from './Linkedin'
 import BlogIcon from './Blog'
+import FolderIcon from './Folder'
 import ExternalIcon from './External';
 
 const Icon = ({ name, color }) => {
@@ -19,6 +20,8 @@ const Icon = ({ name, color }) => {
             return <TwitterIcon />;
         case 'Blog':
             return <BlogIcon />;
+        case 'Folder':
+            return <FolderIcon />;
         case 'External':
             return <ExternalIcon />;
         default:

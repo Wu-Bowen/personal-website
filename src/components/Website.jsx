@@ -10,6 +10,7 @@ import Intro from './Main/Intro';
 import About from './Main/About';
 import Experience from './Main/Experience';
 import Work from './Main/Work';
+import Projects from './Main/Projects';
 // import Footer from "./Footer";
 
 const useStyle = makeStyles(theme => ({
@@ -52,6 +53,7 @@ const Website = () => {
                             <About />
                             <Experience />
                             <Work />
+                            <Projects />
                         </Home>
                     </div>
                 </div>

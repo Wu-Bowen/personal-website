@@ -9,7 +9,7 @@ const Blog = ({color}) => (
     strokeWidth={2}
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="feather feather-folder"
+    className="feather feather-blog"
   >
     <title>{"Blog"}</title>
     <g>

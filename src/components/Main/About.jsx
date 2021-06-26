@@ -167,7 +167,7 @@ const About = () => {
         sr.reveal(revealContainer.current, configs.srConfig());
     }, []);
 
-    const skills = ['JavaScript (ES6+)', 'React', 'Node.js', 'MaterialUI', 'Java', 'Unity'];
+    const skills = ['JavaScript (ES6+)', 'React', 'Node.js', 'MaterialUI', 'Java', 'SQL'];
 
     return (
         <div>
