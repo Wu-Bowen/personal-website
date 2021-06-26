@@ -101,7 +101,7 @@ const useStyles = makeStyles(theme => ({
         width: '100%',
         height: 'auto',
         padding: '10px 5px',
-        minHeight: '350px',
+        minHeight: '380px',
         // display: 'block',
     },
     h3: {

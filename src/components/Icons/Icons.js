@@ -5,19 +5,22 @@ import InstagramIcon from './Instagram'
 import TwitterIcon from './Twitter'
 import LinkedInIcon from './Linkedin'
 import BlogIcon from './Blog'
+import ExternalIcon from './External';
 
-const Icon = ({ name, color}) => {
+const Icon = ({ name, color }) => {
     switch (name) {
         case 'GitHub':
-            return <GithubIcon color={color} />;
+            return <GithubIcon />;
         case 'Instagram':
-            return <InstagramIcon color={color}/>;
+            return <InstagramIcon />;
         case 'Linkedin':
-            return <LinkedInIcon color={color}/>;
+            return <LinkedInIcon />;
         case 'Twitter':
-            return <TwitterIcon color={color}/>;
+            return <TwitterIcon />;
         case 'Blog':
-            return <BlogIcon color={color}/>;
+            return <BlogIcon />;
+        case 'External':
+            return <ExternalIcon />;
         default:
             return <div> yo </div>;
     }

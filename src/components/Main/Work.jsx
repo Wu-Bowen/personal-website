@@ -171,7 +171,7 @@ const useStyles = makeStyles(theme => ({
             alignItems: 'center',
             backgroundColor: theme.palette.primary.textColor,
             verticalAlign: 'center',
-            borderRadius: '4px',
+            borderRadius: '6px',
             '& svg': {
                 color: theme.palette.secondary.main,
                 width: '20px',
@@ -183,7 +183,7 @@ const useStyles = makeStyles(theme => ({
     image: {
         borderRadius: '4px',
         mixBlendMode: 'multiply',
-        filter: 'grayscale(10%) contrast(1) brightness(120%)',
+        filter: 'grayscale(100%) contrast(1) brightness(120%)',
         '&:hover, &:focus': {
             mixBlendMode: 'normal',
             background: 'transparent',
@@ -260,8 +260,8 @@ const Work = () => {
                                             </a>
                                         }
                                         {project.external.length > 0 &&
-                                            <a href={project.github} rel="noopener noreferrer" target="_blank" aria-label="GithubLink">
-                                                <Icon name="Blog" />
+                                            <a href={project.external} rel="noopener noreferrer" target="_blank" aria-label="ExternalLink">
+                                                <Icon name="External" />
                                             </a>
                                         }
                                     </div>
