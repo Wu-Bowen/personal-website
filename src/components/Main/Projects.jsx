@@ -141,6 +141,24 @@ const useStyles = makeStyles(theme => ({
     },
     projectDescription: {
         color: theme.palette.secondary.mainLower,
+    },
+    techStack: {
+        display: 'flex',
+        alignItems: 'flex-end',
+        flexGrow: '1',
+        flexWrap: 'wrap',
+        padding: '0px',
+        margin: '20px 0 0 0',
+        listStyle: 'none',
+        '& li': {
+            fontFamily: theme.fontSecondary,
+            color: theme.palette.secondary.mainEvenLower,
+            fontSize: '12px',
+            lineHeight: '1.75',
+            '&:not(:last-of-type)': {
+                marginRight: '15px',
+            }
+        }
     }
 }));
 const Projects = () => {
@@ -214,7 +232,15 @@ const Projects = () => {
                                             </div>
                                         </header>
                                         <footer>
-                                            yoyoyoyoyoyoyoyo
+                                            {project.stack?.length > 0 && (
+                                                <ul className={classes.techStack}>
+                                                    {project.stack.map((tech, i) => {
+                                                        return (
+                                                            <li key={i}> {tech} </li>
+                                                        );
+                                                    })}
+                                                </ul>
+                                            )}
                                         </footer>
                                     </div>
                                 </li>

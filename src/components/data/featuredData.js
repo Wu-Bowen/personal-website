@@ -21,11 +21,11 @@ const featuredData = {
         },
         {
             name: 'Project Neo',
-            description: ['A in-progress survival base-building and management game. Users must proctor character as well as friendly NPC conditions as they deal with internal and external conflicts. Currently repository is private... until its eventual release'],
+            description: ['A in-progress survival base-building and management game. Users must proctor character as well as friendly NPC conditions as they deal with internal and external conflicts. Currently repo is private... until its eventual release'],
             stack: ['C#', 'Unity', 'Github', 'Photoshop', 'ShaderLab'],
             image: ProjectNeo,
             external: '',
-            github: '',
+            github: 'https://github.com/Wu-Bowen/Project-Neo',
         },
 
 
