@@ -54,9 +54,6 @@ const useStyles = makeStyles(theme => ({
     },
     inner: {
         display: 'flex',
-        // [theme.breakpoints.down('md')]: {
-        //     display: 'block',
-        // }
     },
     tabButton: {
         border: 0,
