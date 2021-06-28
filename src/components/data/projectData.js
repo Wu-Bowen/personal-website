@@ -23,13 +23,6 @@ const projectData = {
         github: 'https://github.com/Wu-Bowen/CO2_And_Global_Warming',
     },
     {
-        name: 'CSS Animation Project',
-        description: <p>Early project where I was just getting started in Frontend development. The project focuses on CSS animations and some cool weather effects that can be done with them.</p>,
-        stack: ['HTML', 'CSS', 'JavaScript'],
-        external: 'https://wu-bowen.github.io/CSS_Animations/',
-        github: 'https://github.com/Wu-Bowen/CSS_Animations',
-    },
-    {
         name: 'Website V2',
         description: <p> Second iteration of my personal website. </p>,
         stack: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
@@ -44,25 +37,18 @@ const projectData = {
         github: 'https://github.com/Wu-Bowen/Jean_Project',
     },
     {
-        name: 'Spotilytics',
-        description: ['A web app for visualizing personalized Spotify analytics. View recently played songs, top artists, tracks, genres, and in-depth overview on your music choice. Also, discover new artists and songs based on personal preferences.'],
-        stack: ['JavaScript', 'React', 'Github', 'Node', 'MongoDB'],
+        name: 'Bobcat Transit',
+        description: <p> A multimodal transit app to optimize transportation decisions in NYC by fetching data from Google Maps, CitiBike, TripToCarbon API, and NYU’s Bus app PassioGo. </p>,
+        stack: ['Expo', 'ReactNative', 'React', 'Redux', 'JavaScript', 'VSCode Live'],
         external: '',
-        github: 'https://github.com/Wu-Bowen/spring-2020-gifted-hammer',
+        github: 'https://github.com/Wu-Bowen/bobcat-transit',
     },
     {
-        name: 'Spotilytics',
-        description: ['A web app for visualizing personalized Spotify analytics. View recently played songs, top artists, tracks, genres, and in-depth overview on your music choice. Also, discover new artists and songs based on personal preferences.'],
-        stack: ['JavaScript', 'React', 'Github', 'Node', 'MongoDB'],
-        external: '',
-        github: 'https://github.com/Wu-Bowen/spring-2020-gifted-hammer',
-    },
-    {
-        name: 'Spotilytics',
-        description: ['A web app for visualizing personalized Spotify analytics. View recently played songs, top artists, tracks, genres, and in-depth overview on your music choice. Also, discover new artists and songs based on personal preferences.'],
-        stack: ['JavaScript', 'React', 'Github', 'Node', 'MongoDB'],
-        external: '',
-        github: 'https://github.com/Wu-Bowen/spring-2020-gifted-hammer',
+        name: 'CSS Animation Project',
+        description: <p>Early project where I was just getting started in Frontend development. The project focuses on CSS animations and some cool weather effects that can be done with them.</p>,
+        stack: ['HTML', 'CSS', 'JavaScript'],
+        external: 'https://wu-bowen.github.io/CSS_Animations/',
+        github: 'https://github.com/Wu-Bowen/CSS_Animations',
     },
     ]
 };
