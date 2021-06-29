@@ -22,22 +22,21 @@ const useStyles = makeStyles(theme => ({
         },
     },
     list: {
-        width:'20px',
-        paddingLeft:'10px',
+        width: '20px',
+        paddingLeft: '10px',
         marginBottom: '10px',
+        '& svg': {
+            color: theme.palette.secondary.main,
+        },
         '&:last-of-type': {
             marginBottom: '40px',
         },
         '&:hover, &:focus': {
             transform: 'translateY(-3px)',
-            color: 'black'
-        },
-        '& svg': {
-            color: theme.palette.secondary.main,
-            '&:hover, &:focus': {
+            '& svg': {
                 color: theme.palette.primary.textColor,
             }
-        }
+        },
     },
 }));
 
