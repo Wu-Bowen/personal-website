@@ -6,7 +6,7 @@ const featuredData = {
     projects: [{
             name: 'Spotilytics',
             description: ['A web app for visualizing personalized Spotify analytics. View recently played songs, top artists, tracks, genres, and in-depth overview on your music choice. Also, discover new artists and songs based on personal preferences.'],
-            stack: ['JavaScript', 'React', 'Github', 'Node', 'MongoDB'],
+            stack: ['JavaScript', 'React', 'Github', 'Node', 'MongoDB', 'Express'],
             image: SpotilyticsImage,
             external: '',
             github: 'https://github.com/Wu-Bowen/spring-2020-gifted-hammer',
@@ -27,11 +27,6 @@ const featuredData = {
             external: '',
             github: 'https://github.com/Wu-Bowen/Project-Neo',
         },
-
-
-
-
-
     ]
 };
 
