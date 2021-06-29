@@ -3,7 +3,7 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#37474f',
+            main: blueGrey[700],
             textColor: '#77ddaa',
             textColorLower: 'rgba(119, 221, 170, .6)',
             textColorLowest: 'rgba(119, 221, 170, .1)',
@@ -16,7 +16,7 @@ const theme = createMuiTheme({
             mainLowest: 'rgba(204,214,246,.15)',
             textColor: '#8892b0',
         },
-        background: blueGrey[900],
+        background: blueGrey[800],
     },
     fontSecondary: '"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace',
 });
