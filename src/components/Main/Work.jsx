@@ -214,7 +214,7 @@ const Work = () => {
 
                 {featuredData?.projects && featuredData.projects.map((project, i) => {
                     return (
-                        <li className={classes.listItem}>
+                        <li key={i} className={classes.listItem}>
                             <div key={i} className={i % 2 == 1 ? classes.projectContentEven : classes.projectContentOdd} ref={el => (revealProjects.current[i] = el)}>
                                 <div>
                                     <p className={classes.featuredProject}> Featured Project </p>

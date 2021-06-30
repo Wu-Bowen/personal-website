@@ -18,10 +18,18 @@ const useStyles = makeStyles(theme => ({
     root: {
         marginBottom: '0'
     },
-    appBar: {
+    appBarHide: {
         borderBottom: `1px solid ${theme.palette.divider}`,
         backgroundColor: theme.palette.background,
         zIndex: theme.zIndex.drawer + 1,
+        transform: 'translateY(-64px)',
+        transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
+    },
+    appBarShow: {
+        borderBottom: `1px solid ${theme.palette.divider}`,
+        backgroundColor: theme.palette.background,
+        zIndex: theme.zIndex.drawer + 1,
+        transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
     },
     toolbarDiv: {
         flexGrow: 1,
@@ -133,7 +141,7 @@ const Navbar = ({ isHome }) => {
         window.location = window.location.href.split('#')[0];
     }
     return (
-        <AppBar position="fixed" className={classes.appBar}>
+        <AppBar position="fixed" className={scrollDirection === 'down' ? classes.appBarHide : classes.appBarShow}>
             <Toolbar>
                 <div className={classes.toolbarDiv}>
                     <TransitionGroup component={null}>

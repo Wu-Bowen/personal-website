@@ -105,7 +105,8 @@ const useStyles = makeStyles(theme => ({
         marginBottom: '2px',
         fontSize: '22px',
         fontWeight: '500',
-        lineHeight: '1.3',    },
+        lineHeight: '1.3',
+    },
     anchor: {
         display: 'inline-block',
         textDecoration: 'none',
@@ -137,7 +138,7 @@ const useStyles = makeStyles(theme => ({
     descriptionContent: {
         paddingLeft: '20px',
         marginBottom: '18px',
-        '&::before' : {
+        '&::before': {
             content: '"▹"',
             position: 'absolute',
             left: '0px',
@@ -232,6 +233,7 @@ const Experience = () => {
                     {jobData?.companies && jobData.companies.map((company, i) => {
                         return (
                             <div
+                                key={i}
                                 className={classes.tabPanel}
                                 id={`panel-${i}`}
                                 role="tabpanel"
@@ -257,7 +259,7 @@ const Experience = () => {
                                 <ul className={classes.descriptionContainer}>
                                     {company.roleDescription.map((description, j) => {
                                         return (
-                                            <li className={classes.descriptionContent}>
+                                            <li key={j} className={classes.descriptionContent}>
                                                 {description}
                                             </li>
                                         )
