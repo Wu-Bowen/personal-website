@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.7bbae08e.chunk.css",
-    "main.js": "/static/js/main.c4fde751.chunk.js",
-    "main.js.map": "/static/js/main.c4fde751.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ce761e74.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ce761e74.js.map",
-    "static/js/2.05572c6e.chunk.js": "/static/js/2.05572c6e.chunk.js",
-    "static/js/2.05572c6e.chunk.js.map": "/static/js/2.05572c6e.chunk.js.map",
-    "static/js/3.776f20a7.chunk.js": "/static/js/3.776f20a7.chunk.js",
-    "static/js/3.776f20a7.chunk.js.map": "/static/js/3.776f20a7.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.7bbae08e.chunk.css.map": "/static/css/main.7bbae08e.chunk.css.map",
-    "static/js/2.05572c6e.chunk.js.LICENSE.txt": "/static/js/2.05572c6e.chunk.js.LICENSE.txt",
-    "static/media/CO2.2fa0c0f5.pdf": "/static/media/CO2.2fa0c0f5.pdf",
-    "static/media/Twitter_Sentiment_Analysis.972baba4.pdf": "/static/media/Twitter_Sentiment_Analysis.972baba4.pdf",
-    "static/media/movieDB.c42e2c5a.PNG": "/static/media/movieDB.c42e2c5a.PNG",
-    "static/media/profileImage.7a7a7019.jpg": "/static/media/profileImage.7a7a7019.jpg",
-    "static/media/projectNeo.6a98573d.PNG": "/static/media/projectNeo.6a98573d.PNG",
-    "static/media/resume.e7a4877a.pdf": "/static/media/resume.e7a4877a.pdf",
-    "static/media/spotilytics.9026dc2a.PNG": "/static/media/spotilytics.9026dc2a.PNG"
+    "main.css": "/personal-website/static/css/main.7bbae08e.chunk.css",
+    "main.js": "/personal-website/static/js/main.4708652f.chunk.js",
+    "main.js.map": "/personal-website/static/js/main.4708652f.chunk.js.map",
+    "runtime-main.js": "/personal-website/static/js/runtime-main.d3d4b819.js",
+    "runtime-main.js.map": "/personal-website/static/js/runtime-main.d3d4b819.js.map",
+    "static/js/2.ef39158d.chunk.js": "/personal-website/static/js/2.ef39158d.chunk.js",
+    "static/js/2.ef39158d.chunk.js.map": "/personal-website/static/js/2.ef39158d.chunk.js.map",
+    "static/js/3.776f20a7.chunk.js": "/personal-website/static/js/3.776f20a7.chunk.js",
+    "static/js/3.776f20a7.chunk.js.map": "/personal-website/static/js/3.776f20a7.chunk.js.map",
+    "index.html": "/personal-website/index.html",
+    "static/css/main.7bbae08e.chunk.css.map": "/personal-website/static/css/main.7bbae08e.chunk.css.map",
+    "static/js/2.ef39158d.chunk.js.LICENSE.txt": "/personal-website/static/js/2.ef39158d.chunk.js.LICENSE.txt",
+    "static/media/CO2.2fa0c0f5.pdf": "/personal-website/static/media/CO2.2fa0c0f5.pdf",
+    "static/media/Twitter_Sentiment_Analysis.972baba4.pdf": "/personal-website/static/media/Twitter_Sentiment_Analysis.972baba4.pdf",
+    "static/media/movieDB.c42e2c5a.PNG": "/personal-website/static/media/movieDB.c42e2c5a.PNG",
+    "static/media/profileImage.7a7a7019.jpg": "/personal-website/static/media/profileImage.7a7a7019.jpg",
+    "static/media/projectNeo.6a98573d.PNG": "/personal-website/static/media/projectNeo.6a98573d.PNG",
+    "static/media/resume.e7a4877a.pdf": "/personal-website/static/media/resume.e7a4877a.pdf",
+    "static/media/spotilytics.9026dc2a.PNG": "/personal-website/static/media/spotilytics.9026dc2a.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.ce761e74.js",
-    "static/js/2.05572c6e.chunk.js",
+    "static/js/runtime-main.d3d4b819.js",
+    "static/js/2.ef39158d.chunk.js",
     "static/css/main.7bbae08e.chunk.css",
-    "static/js/main.c4fde751.chunk.js"
+    "static/js/main.4708652f.chunk.js"
   ]
 }
