@@ -9,11 +9,10 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        backgroundColor: blueGrey[900],
+        backgroundColor: '#37474f',
         flexDirection: 'column',
         height: 'auto',
         minHeight: '64px',
-        borderTop: '1px solid rgba(0, 0, 0, 0.12)',
     },
     credits: {
         color: theme.palette.secondary.mainEvenLower,
