@@ -18,7 +18,7 @@ const projectData = {
         },
         {
             name: 'Sentiment Analysis on Twitter Data',
-            description: <p>The focus of this paper is to compare various NLP models to see which best executes Twitter sentiment analysis. Algorithms explored are: Naive Bayes, Vectorizing, Support Vector Machine, and Long Short-term Memory</p>,
+            description: <p>A Paper focused on comparing various NLP models to model Twitter sentiment analysis. Algorithms explored: Naive Bayes, Vectorizing, Support Vector Machine, and Long Short-term Memory</p>,
             stack: ['TensorFlow', 'Java', 'Python', 'LaTeX'],
             external: NLP_PAPER,
             github: '',
