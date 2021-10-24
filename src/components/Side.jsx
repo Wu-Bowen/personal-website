@@ -12,6 +12,9 @@ const useStyles = makeStyles(theme => ({
         left: '15px',
         right: 'auto',
         zIndex: '10',
+        ['@media (max-width:768px)']: {
+            display: 'none',
+        }
     },
     rightOrientation: {
         width: '40px',
@@ -20,6 +23,9 @@ const useStyles = makeStyles(theme => ({
         left: 'auto',
         right: '0px',
         zIndex: '10',
+        ['@media (max-width:768px)']: {
+            display: 'none',
+        }
     },
 }));
 const Side = ({ children, isHome, orientation }) => {
@@ -46,8 +52,8 @@ const Side = ({ children, isHome, orientation }) => {
 
 Side.propTypes = {
     children: PropTypes.node.isRequired,
+    orientation: PropTypes.string.isRequired,
     isHome: PropTypes.bool,
-    orientation: PropTypes.string,
 };
 
 export default Side;
