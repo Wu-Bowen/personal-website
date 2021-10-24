@@ -186,7 +186,7 @@ const About = () => {
 
                             <p className={classes.p}>
                                 Fast-forward to today, and I've had the privilege of working at{' '}
-                                <a className={classes.anchor} href="https://www.chinaunicom.com.hk/en/global/home.php" rel="noopener noreferrer" target="_blank">a telecom company</a> and {' '}
+                                <a className={classes.anchor} href="https://www.chinaunicomglobal.com/us/" rel="noopener noreferrer" target="_blank">a telecom company</a> and {' '}
                                 <a className={classes.anchor} href="https://www.pfizer.com/" rel="noopener noreferrer" target="_blank">a pharmaceutical giant</a>. Currently, I am a part of the Credit Risk Team at {' '}
                                 <a className={classes.anchor} href="https://about.bankofamerica.com/en" rel="noopener noreferrer" target="_blank">Bank of America</a> developing internal tools to measure capital
                                 risk of numerous investment companies.

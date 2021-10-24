@@ -30,7 +30,7 @@ const jobData = {
         }, {
             startDate: '12-1-20',
             companyName: 'China Unicom',
-            url: 'https://www.chinaunicom.com.hk/en/global/home.php',
+            url: 'https://www.chinaunicomglobal.com/us/',
             title: 'Software Engineer Intern',
             location: 'Shanghai',
             range: 'December 2018 - January 2019',
