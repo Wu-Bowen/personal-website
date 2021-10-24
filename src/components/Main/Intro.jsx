@@ -90,7 +90,7 @@ const Intro = () => {
 
     const one = <h1 className={classes.h1}>Hello, My Name is </h1>;
     const two = <h2 className={classes.h2}>Eric Wu.</h2>;
-    const three = <h3 className={classes.h3}>I build things for the web.</h3>;
+    const three = <h3 className={classes.h3}>I am a developer.</h3>;
     const four = (
         <p className={classes.p}>
             I'm a recently graduated software engineer who specializes in designing and developing web applications. Currently, I'm a developer at{' '}
