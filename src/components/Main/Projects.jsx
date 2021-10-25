@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import projectData from './../data/projectData';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from './../../utils/sr';

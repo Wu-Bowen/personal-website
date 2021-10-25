@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import profileImage from './../../files/profileImage.jpg'
 
 import sr from './../../utils/sr';

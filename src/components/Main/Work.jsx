@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import featuredData from './../data/featuredData';
 import Icon from './..//Icons/Icons';
 import sr from './../../utils/sr';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import configs from '../config';
 import Side from './Side';
 import Icon from './Icons/Icons';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => ({
     socialContainer: {

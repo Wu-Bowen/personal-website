@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styled from 'styled-components';
 import IconLoader from './Icons/IconLoader';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import { blueGrey } from '@mui/material/colors';
 
 const StyledLoader = styled.div`
   ${({ theme }) => theme};

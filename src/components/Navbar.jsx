@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Grid, Button } from "@material-ui/core/";
-import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Grid, Button } from "@mui/material/";
+import makeStyles from '@mui/styles/makeStyles';
 import { NavHashLink as Link } from 'react-router-hash-link';
 import Pdf from "./../files/resume.pdf";
 import { loaderDelay } from '../utils/index';
@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
             textAlign: "center",
             color: theme.palette.secondary.main
         },
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('md')]: {
             padding: theme.spacing(0),
             color: theme.palette.primary.main,
             '& *': {
@@ -161,7 +161,7 @@ const Navbar = ({ isHome }) => {
                             </CSSTransition>
                         )}
                     </TransitionGroup>
-                    <Grid container direction="row" justify="flex-end" alignItems="center">
+                    <Grid container direction="row" justifyContent="flex-end" alignItems="center">
 
                         <Grid item>
                             <nav className={classes.toolbar}>
@@ -192,9 +192,7 @@ const Navbar = ({ isHome }) => {
                 </div>
             </Toolbar>
         </AppBar>
-
-
-    )
+    );
 }
 
 export default Navbar;

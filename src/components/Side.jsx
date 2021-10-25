@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { loaderDelay } from '../utils/index';
-import { makeStyles } from '@material-ui/core/styles';
-import Slide from '@material-ui/core/Slide';
+import makeStyles from '@mui/styles/makeStyles';
+import Slide from '@mui/material/Slide';
 
 const useStyles = makeStyles(theme => ({
     leftOrientation: {

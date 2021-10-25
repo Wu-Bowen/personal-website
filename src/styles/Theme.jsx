@@ -1,6 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
-const theme = createMuiTheme({
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
+import { blueGrey } from '@mui/material/colors';
+const theme = createTheme(adaptV4Theme({
     palette: {
         primary: {
             main: blueGrey[700],
@@ -19,5 +19,5 @@ const theme = createMuiTheme({
         background: blueGrey[800],
     },
     fontSecondary: '"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace',
-});
+}));
 export default theme;

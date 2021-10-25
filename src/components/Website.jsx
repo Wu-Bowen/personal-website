@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-// import Navbar from './Navbar';
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
 import Navbar from './Navbar';
 import Email from './Email';
 import Social from './Social';
@@ -21,7 +20,7 @@ const useStyle = makeStyles(theme => ({
         minHeight:'100%',
         width: '100%',
         lineHeight: '1.3',
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
         },
     },

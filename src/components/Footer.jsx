@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import makeStyles from '@mui/styles/makeStyles';
+import { blueGrey } from '@mui/material/colors';
 
 
 const useStyles = makeStyles(theme => ({

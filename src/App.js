@@ -1,15 +1,17 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import Website from './components/Website';
 import theme from './styles/Theme';
 
 const App = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <ThemeProvider theme={theme}>
-        <Website />
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <Website />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </BrowserRouter>
   );
 }
