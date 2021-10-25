@@ -26,13 +26,19 @@ const useStyles = makeStyles(theme => ({
     },
     h2: {
         margin: '0',
-        fontSize: 'clamp(40px, 8vw, 60px)',
+        fontSize: '60px',
         color: theme.palette.secondary.main,
+        ['@media (max-width:768px)']: {
+            fontSize: '50px',
+        }
     },
     h3: {
         marginTop: '10px',
-        fontSize: 'clamp(40px, 8vw, 60px)',
+        fontSize: '60px',
         color: theme.palette.secondary.textColor,
+        ['@media (max-width:768px)']: {
+            fontSize: '50px',
+        }
     },
     p: {
         margin: '20px 0 0',
@@ -88,7 +94,7 @@ const Intro = () => {
         return () => clearTimeout(timeout);
     }, []);
 
-    const one = <h1 className={classes.h1}>Hello, My Name is </h1>;
+    const one = <h1 className={classes.h1}>Hello, my name is </h1>;
     const two = <h2 className={classes.h2}>Eric Wu.</h2>;
     const three = <h3 className={classes.h3}>I am an app developer.</h3>;
     const four = (

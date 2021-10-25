@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Grid, Button } from "@mui/material/";
+import { AppBar, Toolbar, Grid, Button, useMediaQuery } from "@mui/material/";
 import makeStyles from '@mui/styles/makeStyles';
 import { NavHashLink as Link } from 'react-router-hash-link';
 import Pdf from "./../files/resume.pdf";
@@ -12,12 +12,7 @@ import configs from './../config';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './../styles/transitions.css';
 
-
-
 const useStyles = makeStyles(theme => ({
-    root: {
-        marginBottom: '0'
-    },
     appBarHide: {
         borderBottom: `1px solid ${theme.palette.divider}`,
         backgroundColor: theme.palette.background,
@@ -46,15 +41,6 @@ const useStyles = makeStyles(theme => ({
             alignItems: "center",
             textAlign: "center",
             color: theme.palette.secondary.main
-        },
-        [theme.breakpoints.down('md')]: {
-            padding: theme.spacing(0),
-            color: theme.palette.primary.main,
-            '& *': {
-                padding: theme.spacing(0),
-                color: theme.palette.primary.main,
-                fontSize: "24px",
-            }
         },
     },
     link: {
@@ -97,6 +83,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Navbar = ({ isHome }) => {
+    const matches = useMediaQuery('(min-width:768px)');
     const classes = useStyles();
     const activeStyle = {
         color: '#77ddaa',
@@ -162,32 +149,35 @@ const Navbar = ({ isHome }) => {
                         )}
                     </TransitionGroup>
                     <Grid container direction="row" justifyContent="flex-end" alignItems="center">
-
-                        <Grid item>
-                            <nav className={classes.toolbar}>
-                                <TransitionGroup component={null}>
-                                    {isMounted && configs.navLinks &&
-                                        configs.navLinks.map(({ url, name }, i) => (
-                                            <CSSTransition key={i} classNames={isHome ? 'fadedown' : ''} timeout={isHome ? loaderDelay : 0}>
-                                                <Link smooth to={url} activeStyle={activeStyle} className={classes.link} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                                                    <span className={classes.highlight}> 0{i + 1}. </span> {name}
-                                                </Link>
-                                            </CSSTransition>
-                                        ))}
-                                </TransitionGroup>
-                                <TransitionGroup component={null}>
-                                    {isMounted && (
-                                        <CSSTransition classNames={isHome ? 'fadedown' : ''} timeout={isHome ? loaderDelay : 0}>
-                                            <a href={Pdf} rel="noopener noreferrer" target="_blank" style={{ transitionDelay: `${isHome ? configs.navLinks.length * 100 : 0}ms` }}>
-                                                <Button className={classes.navButton} >
-                                                    Resume
+                        {matches ?
+                            <Grid item>
+                                <nav className={classes.toolbar}>
+                                    <TransitionGroup component={null}>
+                                        {isMounted && configs.navLinks &&
+                                            configs.navLinks.map(({ url, name }, i) => (
+                                                <CSSTransition key={i} classNames={isHome ? 'fadedown' : ''} timeout={isHome ? loaderDelay : 0}>
+                                                    <Link smooth to={url} activeStyle={activeStyle} className={classes.link} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
+                                                        <span className={classes.highlight}> 0{i + 1}. </span> {name}
+                                                    </Link>
+                                                </CSSTransition>
+                                            ))}
+                                    </TransitionGroup>
+                                    <TransitionGroup component={null}>
+                                        {isMounted && (
+                                            <CSSTransition classNames={isHome ? 'fadedown' : ''} timeout={isHome ? loaderDelay : 0}>
+                                                <a href={Pdf} rel="noopener noreferrer" target="_blank" style={{ transitionDelay: `${isHome ? configs.navLinks.length * 100 : 0}ms` }}>
+                                                    <Button className={classes.navButton} >
+                                                        Resume
                                                 </Button>
-                                            </a>
-                                        </CSSTransition>
-                                    )}
-                                </TransitionGroup>
-                            </nav>
-                        </Grid>
+                                                </a>
+                                            </CSSTransition>
+                                        )}
+                                    </TransitionGroup>
+                                </nav>
+                            </Grid> :
+                            undefined
+                        }
+
                     </Grid>
                 </div>
             </Toolbar>
