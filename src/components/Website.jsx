@@ -24,11 +24,11 @@ const useStyle = makeStyles(theme => ({
             flexDirection: 'column',
         },
     },
-    content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background,
+    // content: {
+    //     flexGrow: 1,
+    //     backgroundColor: theme.palette.background,
 
-    },
+    // },
     toolbar: {
         ...theme.mixins.toolbar,
     },
@@ -47,7 +47,7 @@ const Website = () => {
                     <Navbar isHome={true}/>
                     <Email isHome={true} />
                     <Social isHome={true} />
-                    <div className={classes.content}>
+                    <div className={"content"}>
                         <Home className={classes.root}>
                             <Intro />
                             <About />

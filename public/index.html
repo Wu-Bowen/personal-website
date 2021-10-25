@@ -32,6 +32,25 @@
 
     body {
       background-color: #37474f;
+      /* filter: blur(5px) brightness(0.7);
+      transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+      pointer-events: none;
+      user-select: none; */
+    }
+    .blur {
+      overflow: hidden;
+    }
+
+    .blur header {
+        background-color: transparent;
+      }
+      
+    .blur .content {
+      
+      filter: blur(5px) brightness(0.7);
+      transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+      pointer-events: none;
+      user-select: none;
     }
   </style>
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />

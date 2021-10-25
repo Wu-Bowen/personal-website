@@ -1,6 +1,6 @@
-import { createTheme, adaptV4Theme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { blueGrey } from '@mui/material/colors';
-const theme = createTheme(adaptV4Theme({
+const theme = createTheme({
     palette: {
         primary: {
             main: blueGrey[700],
@@ -19,5 +19,5 @@ const theme = createTheme(adaptV4Theme({
         background: blueGrey[800],
     },
     fontSecondary: '"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace',
-}));
+});
 export default theme;

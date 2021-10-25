@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
+import { Helmet } from 'react-helmet';
 
 const useStyles = makeStyles(theme => ({
     hamburgerButton: {
@@ -104,6 +105,44 @@ const useStyles = makeStyles(theme => ({
             transform: 'rotate(0)',
             transition: 'bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19)',
         }
+    },
+    sideBarClose: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'fixed',
+        top: '0',
+        bottom: '0',
+        right: '0',
+        padding: '50px 10px',
+        width: 'min(75vw, 400px)',
+        height: '100vh',
+        outline: '0',
+        backgroundColor: theme.palette.primary.main,
+        boxShadow: '0 10px 30px -15px #37474f',
+        zIndex: '9',
+        transform: 'translateX(0vw)',
+        visibility: 'visible',
+        transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
+    },
+    sideBarOpen: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'fixed',
+        top: '0',
+        bottom: '0',
+        right: '0',
+        padding: '50px 10px',
+        width: 'min(75vw, 400px)',
+        height: '100vh',
+        outline: '0',
+        backgroundColor: theme.palette.primary.main,
+        boxShadow: '0 10px 30px -15px #37474f',
+        zIndex: '9',
+        transform: 'translateX(100vw)',
+        visibility: 'hidden',
+        transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
     }
 }));
 const Menu = () => {
@@ -114,16 +153,26 @@ const Menu = () => {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     }
-    
-    return (
-        <div ref={wrapperRef}>
-            <div className={classes.hamburgerButton} onClick={toggleMenu} >
-                <div className={classes.hamburgerInner}>
-                    {!menuOpen ?
-                        <div className={classes.hamburgerIconOpen} /> :
-                        <div className={classes.hamburgerIconClose} />
-                    }
 
+    return (
+        <div>
+            <Helmet>
+                <body className={menuOpen? 'blur' : ''}/>
+            </Helmet>
+            <div ref={wrapperRef}>
+                <div className={classes.hamburgerButton} onClick={toggleMenu} >
+                    <div className={classes.hamburgerInner}>
+                        <div className={menuOpen ?
+                            classes.hamburgerIconClose :
+                            classes.hamburgerIconOpen}
+                        />
+                    </div>
+                </div>
+                <div className={
+                    menuOpen ?
+                        classes.sideBarClose :
+                        classes.sideBarOpen}
+                >
                 </div>
             </div>
         </div>
