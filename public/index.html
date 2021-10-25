@@ -20,35 +20,32 @@
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-      background: rgba(204,214,246,.3);
+      background: rgba(204, 214, 246, .3);
       border: 3px solid #37474f;
       border-radius: 10px;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(204,214,246,.5);
+      background: rgba(204, 214, 246, .5);
     }
 
     body {
       background-color: #37474f;
-      /* filter: blur(5px) brightness(0.7);
-      transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-      pointer-events: none;
-      user-select: none; */
     }
+
     .blur {
       overflow: hidden;
     }
 
     .blur header {
-        background-color: transparent;
-      }
-      
+      background-color: transparent;
+    }
+
     .blur .content {
-      
+
       filter: blur(5px) brightness(0.7);
-      transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
       pointer-events: none;
       user-select: none;
     }
