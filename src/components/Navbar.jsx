@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Grid, Button, useMediaQuery } from "@mui/material/";
+import Menu from './Menu';
 import makeStyles from '@mui/styles/makeStyles';
 import { NavHashLink as Link } from 'react-router-hash-link';
 import Pdf from "./../files/resume.pdf";
@@ -68,7 +69,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     hamIcon: {
-        color: theme.palette.primary.main
+        color: theme.palette.primary.textColor
     },
     highlight: {
         color: '#77ddaa',
@@ -175,7 +176,7 @@ const Navbar = ({ isHome }) => {
                                     </TransitionGroup>
                                 </nav>
                             </Grid> :
-                            undefined
+                            <Menu />
                         }
 
                     </Grid>
