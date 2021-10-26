@@ -1,10 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { Button } from "@mui/material/";
+import { Button } from '@mui/material/';
 import { Helmet } from 'react-helmet';
 import { NavHashLink as Link } from 'react-router-hash-link';
 import configs from './../config';
-import Pdf from "./../files/resume.pdf";
+import Pdf from './../files/resume.pdf';
+import useOnClickOutside from './../hooks/useOnClickOutside';
+import { KEY_CODES } from './../utils';
 
 const useStyles = makeStyles(theme => ({
     hamburgerButton: {
@@ -206,16 +208,89 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 const Menu = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const navRef = useRef(null);
     const classes = useStyles();
-    const wrapperRef = useRef();
-
-
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     }
+
+    const navRef = useRef(null);
+    const buttonRef = useRef(null);
+
+    let menuFocusables;
+    let firstFocusableEl;
+    let lastFocusableEl;
+
+    const setFocusables = () => {
+        menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
+        firstFocusableEl = menuFocusables[0];
+        lastFocusableEl = menuFocusables[menuFocusables.length - 1];
+    };
+
+    const handleBackwardTab = (e) => {
+        if (document.activeElement === firstFocusableEl) {
+            e.preventDefault();
+            lastFocusableEl.focus();
+        }
+    };
+
+    const handleForwardTab = (e) => {
+        if (document.activeElement === lastFocusableEl) {
+            e.preventDefault();
+            firstFocusableEl.focus();
+        }
+    };
+
+    const onKeyDown = (e) => {
+        switch (e.key) {
+            case KEY_CODES.ESCAPE:
+            case KEY_CODES.ESCAPE_IE11: {
+                setMenuOpen(false);
+                break;
+            }
+
+            case KEY_CODES.TAB: {
+                if (menuFocusables && menuFocusables.length === 1) {
+                    e.preventDefault();
+                    break;
+                }
+                if (e.shiftKey) {
+                    handleBackwardTab(e);
+                } else {
+                    handleForwardTab(e);
+                }
+                break;
+            }
+
+            default: {
+                break;
+            }
+        }
+    };
+
+    const onResize = (e) => {
+        if (e.currentTarget.innerWidth > 768) {
+            setMenuOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('keydown', onKeyDown);
+        window.addEventListener('resize', onResize);
+
+        setFocusables();
+
+        return () => {
+            document.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener('resize', onResize);
+        };
+    }, []);
+
+
+    const wrapperRef = useRef();
+    useOnClickOutside(wrapperRef, () => setMenuOpen(false));
+
 
     return (
         <div>
@@ -223,7 +298,7 @@ const Menu = () => {
                 <body className={menuOpen ? 'blur' : ''} />
             </Helmet>
             <div ref={wrapperRef}>
-                <div className={classes.hamburgerButton} onClick={toggleMenu} >
+                <div className={classes.hamburgerButton} onClick={toggleMenu} ref={buttonRef}>
                     <div className={classes.hamburgerInner}>
                         <div className={menuOpen ?
                             classes.hamburgerIconClose :
