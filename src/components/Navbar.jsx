@@ -169,7 +169,7 @@ const Navbar = ({ isHome }) => {
                                                 <a href={Pdf} rel="noopener noreferrer" target="_blank" style={{ transitionDelay: `${isHome ? configs.navLinks.length * 100 : 0}ms` }}>
                                                     <Button className={classes.navButton} >
                                                         Resume
-                                                </Button>
+                                                    </Button>
                                                 </a>
                                             </CSSTransition>
                                         )}

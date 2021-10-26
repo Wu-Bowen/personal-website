@@ -1,6 +1,10 @@
 import React, { useRef, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
+import { Button } from "@mui/material/";
 import { Helmet } from 'react-helmet';
+import { NavHashLink as Link } from 'react-router-hash-link';
+import configs from './../config';
+import Pdf from "./../files/resume.pdf";
 
 const useStyles = makeStyles(theme => ({
     hamburgerButton: {
@@ -143,12 +147,46 @@ const useStyles = makeStyles(theme => ({
         transform: 'translateX(100vw)',
         visibility: 'hidden',
         transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
-    }
+    },
+    navigation: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        width: '100%',
+        flexDirection: 'column',
+        color: theme.palette.secondary.main,
+        fontFamily: '"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace',
+        textAlign: 'center',
+    },
+    link: {
+        padding: '10px',
+        display: 'inline-block',
+        border: '1px solid transparent',
+        textDecoration: 'none',
+        color: theme.palette.secondary.main,
+        fontSize: '20px',
+        margin: '0 auto 20px',
+        padding: '3px 20px 20px',
+        ['@media (max-width:600px)']: {
+            margin: '0 auto 10px',
+            fontSize: '16px',
+        },
+
+        '&:hover': {
+            color: theme.palette.primary.textColor,
+        }
+    },
+    highlight: {
+        color: '#77ddaa',
+        margin: '0px',
+    },
 }));
 const Menu = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const navRef = useRef(null);
     const classes = useStyles();
     const wrapperRef = useRef();
-    const [menuOpen, setMenuOpen] = useState(false);
+
+
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -157,7 +195,7 @@ const Menu = () => {
     return (
         <div>
             <Helmet>
-                <body className={menuOpen? 'blur' : ''}/>
+                <body className={menuOpen ? 'blur' : ''} />
             </Helmet>
             <div ref={wrapperRef}>
                 <div className={classes.hamburgerButton} onClick={toggleMenu} >
@@ -173,6 +211,19 @@ const Menu = () => {
                         classes.sideBarClose :
                         classes.sideBarOpen}
                 >
+                    <nav ref={navRef} className={classes.navigation}>
+                        {configs?.navLinks &&
+                            configs.navLinks.map(({ url, name }, i) => (
+                                <Link smooth to={url} className={classes.link}>
+                                    <span className={classes.highlight}> 0{i + 1}. </span> <br /> {name}
+                                </Link>
+                            ))}
+                        <a href={Pdf} rel="noopener noreferrer" target="_blank">
+                            <Button className={classes.navButton} >
+                                Resume
+                            </Button>
+                        </a>
+                    </nav>
                 </div>
             </div>
         </div>
