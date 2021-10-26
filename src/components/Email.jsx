@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import makeStyles from '@mui/styles/makeStyles';
 import Side from './Side';
+import configs from './../config';
 
 const useStyles = makeStyles(theme => ({
     emailContainer: {
@@ -39,7 +40,7 @@ const Email = ({isHome}) => {
     return (
         <Side isHome={isHome} orientation="right">
             <div className={classes.emailContainer}>
-                <a className={classes.anchor} href={`mailto:${'ebw289@nyu.edu'}`}>{'ebw289@nyu.edu'}</a>
+                <a className={classes.anchor} href={`mailto:${configs.email}`}>{configs.email}</a>
             </div>
         </Side>
     );
