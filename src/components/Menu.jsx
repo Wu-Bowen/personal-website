@@ -314,7 +314,7 @@ const Menu = () => {
                     <nav ref={navRef} className={classes.navigation}>
                         {configs?.navLinks &&
                             configs.navLinks.map(({ url, name }, i) => (
-                                <Link smooth to={url} className={classes.link}>
+                                <Link key={i} smooth to={url} className={classes.link} onClick={() => setMenuOpen(false)}>
                                     <span className={classes.highlight}> 0{i + 1}. </span> <br /> {name}
                                 </Link>
                             ))}

@@ -101,11 +101,11 @@ const useStyles = makeStyles(theme => ({
         display: 'grid',
         gridTemplateColumns: '3fr 2fr',
         gap: '50px',
-    },
-    imageContainer: {
-        position: 'relative',
-        maxWidth: '300px',
-        height: 'fit-content',
+        ['@media (max-width:768px)']: {
+            display: 'flex',
+            gridTemplateColumns: 'none',
+            gap: '0px',
+        },
     },
     imageWrapper: {
         display: 'flex',
@@ -117,6 +117,9 @@ const useStyles = makeStyles(theme => ({
         minWidth: '200px',
         borderRadius: '4px',
         backgroundColor: '#4e8871',
+        ['@media (max-width:768px)']: {
+            display: 'none',
+        },
         '&:hover, &:focus': {
             background: 'transparent',
             outline: '0',
