@@ -162,23 +162,48 @@ const useStyles = makeStyles(theme => ({
         display: 'inline-block',
         border: '1px solid transparent',
         textDecoration: 'none',
+        textDecorationSkipInk: 'auto',
         color: theme.palette.secondary.main,
         fontSize: '20px',
         margin: '0 auto 20px',
         padding: '3px 20px 20px',
-        ['@media (max-width:600px)']: {
+        width: '80%',
+        transition: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+        ['@media (max-width:450px)']: {
             margin: '0 auto 10px',
+            padding: '3px 10px 10px',
             fontSize: '16px',
         },
-
-        '&:hover': {
+        '&:hover, &:focus, &:active': {
             color: theme.palette.primary.textColor,
+            outline: '0',
         }
     },
     highlight: {
         color: '#77ddaa',
         margin: '0px',
     },
+    resume: {
+        display: 'inline-block',
+        color: theme.palette.primary.textColor,
+        backgroundColor: 'transparent',
+        border: '1px solid',
+        borderRadius: '4px',
+        padding: '1.25rem 1.75rem',
+        fontSize: '14px',
+        fontFamily: theme.fontSecondary,
+        lineHeight: 1,
+        textDecoration: 'none',
+        cursor: 'pointer',
+        transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
+        '&:hover, &:focus, &:active': {
+            backgroundColor: theme.palette.primary.textColorLowest,
+            outline: 'none',
+        },
+        padding: '18px 50px',
+        margin: '10% auto 0',
+        width: 'max-content',
+    }
 }));
 const Menu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -218,8 +243,8 @@ const Menu = () => {
                                     <span className={classes.highlight}> 0{i + 1}. </span> <br /> {name}
                                 </Link>
                             ))}
-                        <a href={Pdf} rel="noopener noreferrer" target="_blank">
-                            <Button className={classes.navButton} >
+                        <a className={classes.link} href={Pdf} rel="noopener noreferrer" target="_blank">
+                            <Button className={classes.resume} >
                                 Resume
                             </Button>
                         </a>
