@@ -1,11 +1,23 @@
 const jobData = {
-    companies: [{
-            startDate: '01-20-2020',
+    companies: [
+        {
+            startDate: '12--2021',
+            companyName: 'Microsoft',
+            url: 'https://www.microsoft.com/en-us/',
+            title: 'Software Engineer',
+            location: 'Redmond, WA',
+            range: 'December 2021 - present',
+            roleDescription: [
+                'TBD'
+            ]
+        },
+        {
+            startDate: '01-20-2021',
             companyName: 'Bank of America',
             url: 'https://about.bankofamerica.com/en/our-company',
             title: 'Software Engineer',
             location: 'Charlotte, NC',
-            range: 'January 2021 - present',
+            range: 'January 2021 - November 2021',
             roleDescription: [
                 'Revamped long-standing credit risk platform to use a microservice architecture, substantially reducing load time',
                 'Transitioned the web app’s Spring framework to Node’s Express to maintain continuity between front and backend',
@@ -16,7 +28,7 @@ const jobData = {
         },
         {
             startDate: '05-10-2019',
-            companyName: 'Pfizer Inc.',
+            companyName: 'Pfizer',
             url: 'https://www.pfizer.com/',
             title: 'Software Developer Intern',
             location: 'New York, NY',
