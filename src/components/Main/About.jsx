@@ -102,9 +102,7 @@ const useStyles = makeStyles(theme => ({
         gridTemplateColumns: '3fr 2fr',
         gap: '50px',
         ['@media (max-width:768px)']: {
-            display: 'flex',
-            gridTemplateColumns: 'none',
-            gap: '0px',
+            display: 'block'
         },
     },
     imageWrapper: {
@@ -117,9 +115,6 @@ const useStyles = makeStyles(theme => ({
         minWidth: '200px',
         borderRadius: '4px',
         backgroundColor: '#4e8871',
-        ['@media (max-width:768px)']: {
-            display: 'none',
-        },
         '&:hover, &:focus': {
             background: 'transparent',
             outline: '0',
@@ -161,6 +156,11 @@ const useStyles = makeStyles(theme => ({
         transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
         zIndex: '1',
     },
+    innerText: {
+        ['@media (max-width:768px)']: {
+            paddingBottom: '60px',
+        },
+    }
 }));
 const About = () => {
     const classes = useStyles();
@@ -178,7 +178,7 @@ const About = () => {
                 <h2 className={classes.h2}>About Me</h2>
 
                 <div className={classes.inner}>
-                    <div>
+                    <div className={classes.innerText}>
                         <div>
                             <p className={classes.p}>
                                 Hello! I'm Eric and welcome to my website. I've always enjoyed creating things, so naturally I branched into something I had spent hours on: computers.
