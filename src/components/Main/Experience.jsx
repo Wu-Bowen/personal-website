@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
         width: 'max-content',
         padding: '0',
         margin: '0',
-        lisStyle: 'none',
+        listStyle: 'none',
     },
     h2: {
         display: 'flex',
