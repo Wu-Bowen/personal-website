@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import jobData from './../data/jobData';
 import { KEY_CODES } from './../../utils';
+import { useMediaQuery } from "@mui/material/";
 
 // import { srConfig } from '@config';
 import sr from './../../utils/sr';
@@ -11,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     experienceContainer: {
         margin: '0px auto',
         width: '80vw',
-        maxWidth: '1000px',
+        maxWidth: '700px',
         padding: '100px 0',
         color: theme.palette.secondary.main
     },
@@ -22,6 +23,19 @@ const useStyles = makeStyles(theme => ({
         padding: '0',
         margin: '0',
         listStyle: 'none',
+        ['@media (max-width:768px)']: {
+            display: 'flex',
+            overflowX: 'auto',
+            width: 'calc(100% + 100px)',
+            paddingLeft: '50px',
+            marginLeft: '-50px',
+            marginBottom: '30px',
+        },
+        ['@media (max-width:480px)']: {
+            width: 'calc(100% + 50px)',
+            paddingLeft: '25px',
+            marginLeft: '-25px',
+        }
     },
     h2: {
         display: 'flex',
@@ -54,6 +68,9 @@ const useStyles = makeStyles(theme => ({
     },
     inner: {
         display: 'flex',
+        ['@media (max-width:768px)']: {
+            display: 'block',
+        },
     },
     tabButton: {
         border: 0,
@@ -71,6 +88,19 @@ const useStyles = makeStyles(theme => ({
         fontSize: '13px',
         textAlign: 'left',
         whiteSpace: 'nowrap',
+        ['@media (max-width:856x)']: {
+            padding: '0 15px 2px',
+        },
+        ['@media (max-width:768px)']: {
+            display:'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minWidth: '120px',
+            padding: '0 15px',
+            borderLeft: '0',
+            borderBottom: '2px solid rgba(204, 214, 246, .15)',
+            textAlign: 'center',
+        },
         '&:hover, &:focus': {
             backgroundColor: theme.palette.secondary.mainLowest,
             outline: 'none',
@@ -87,12 +117,26 @@ const useStyles = makeStyles(theme => ({
         background: theme.palette.primary.textColor,
         transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
         transitionDelay: '0.1s',
+        ['@media (max-width:768px)']: {
+            top: 'auto',
+            bottom: '0',
+            width: '100%',
+            maxWidth: '120px',
+            height: '2px',
+            marginLeft: '50px',
+        },
+        ['@media (max-width:480px)']: {
+            marginLeft: '25px',
+        }
     },
     tabPanels: {
         display: 'block',
         position: 'relative',
         width: '100%',
         marginLeft: '20px',
+        ['@media (max-width:768px)']: {
+            marginLeft: '0px',
+        }
     },
     tabPanel: {
         width: '100%',
@@ -148,6 +192,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 const Experience = () => {
+    const matches = useMediaQuery('(max-width:768px)');
     const classes = useStyles();
     const [currentTab, setCurrentTab] = useState(0);
     const [focusedTab, setFocusedTab] = useState(null);
@@ -225,7 +270,10 @@ const Experience = () => {
                             </button>
                         )
                     })}
-                    <div className={classes.activeTab} style={{ transform: `translateY(${currentTab * 50}px)` }} />
+                    <div className={classes.activeTab} style={matches
+                        ? { transform: `translateX(${currentTab * 120}px)` }
+                        : { transform: `translateY(${currentTab * 50}px)` }}
+                    />
                 </div>
 
 
