@@ -5,7 +5,7 @@ const IconLoader = ({ color }) => (
         <title>Loader Logo</title>
         <g>
             <g id='E'>
-                <text transform="translate(293 324)" fill="#63ffda" fontSize="200" fontFamily='-apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif' fontWeight="600">
+                <text transform="translate(293 324)" fill="#63ffda" fontSize="200" fontFamily='-apple-system, BlinkMacSystemFont, SegoeUI-Semibold, Segoe UI' fontWeight="600">
                     <tspan x="20" y="0">E</tspan>
                 </text>
             </g>
