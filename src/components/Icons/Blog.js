@@ -17,7 +17,7 @@ const Blog = ({color}) => (
         <text
           transform="translate(-11 18)"
           fontSize={13}
-          fontFamily='-apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif'
+          fontFamily='-apple-system, BlinkMacSystemFont, SegoeUI-Semibold, Segoe UI'
           fontWeight={100}
           fill={color}
         >

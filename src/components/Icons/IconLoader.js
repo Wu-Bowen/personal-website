@@ -2,7 +2,7 @@ import React from 'react';
 
 const IconLoader = ({ color }) => (
     <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="120 0 400 400">
-        <title>Loader Logo</title>
+        <title>Eric Wu</title>
         <g>
             <g id='E'>
                 <text transform="translate(293 324)" fill="#63ffda" fontSize="200" fontFamily='-apple-system, BlinkMacSystemFont, SegoeUI-Semibold, Segoe UI' fontWeight="600">
