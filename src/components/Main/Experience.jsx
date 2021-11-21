@@ -26,13 +26,13 @@ const useStyles = makeStyles(theme => ({
         ['@media (max-width:768px)']: {
             display: 'flex',
             overflowX: 'auto',
-            width: 'calc(100% + 100px)',
+            width: 'calc(100% + 50px)',
             paddingLeft: '50px',
             marginLeft: '-50px',
             marginBottom: '30px',
         },
         ['@media (max-width:480px)']: {
-            width: 'calc(100% + 50px)',
+            width: 'calc(100% + 25px)',
             paddingLeft: '25px',
             marginLeft: '-25px',
         }
@@ -96,6 +96,7 @@ const useStyles = makeStyles(theme => ({
             justifyContent: 'center',
             alignItems: 'center',
             minWidth: '120px',
+            width: '120px',
             padding: '0 15px',
             borderLeft: '0',
             borderBottom: '2px solid rgba(204, 214, 246, .15)',

@@ -53,8 +53,21 @@ const useStyles = makeStyles(theme => ({
         gridGap: '10px',
         gridTemplateColumns: 'repeat(12, 1fr)',
         alignItems: 'center',
+        ['@media (max-width:768px)']: {
+            boxShadow: '0px 10px 30px -15px #37474f',
+            transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
+            '&:hover, &:focus': {
+                boxShadow: '0px 20px 30px -15px #37474f'
+            },
+        },
         '&:not(:last-of-type)': {
             marginBottom: '150px',
+            ['@media (max-width:768px)']: {
+                marginBottom: '70px',
+            },
+            ['@media (max-width:480px)']: {
+                marginBottom: '30px',
+            },
         },
     },
     projectContentEven: {
@@ -71,6 +84,7 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'right',
         zIndex: '2',
         pointerEvents: 'none',
+
     },
     featuredProject: {
         margin: '10px 0px',
@@ -150,7 +164,11 @@ const useStyles = makeStyles(theme => ({
                 width: '100%',
                 height: '100%',
             }
-        }
+        },
+        ['@media (max-width:768px)']: {
+            gridColumn: '1 / -1',
+        },
+        
     },
     projectImageOdd: {
         gridColumn: '1 / 8',
@@ -163,7 +181,10 @@ const useStyles = makeStyles(theme => ({
                 width: '100%',
                 height: '100%',
             }
-        }
+        },
+        ['@media (max-width:768px)']: {
+            gridColumn: '1 / -1',
+        },
     },
     imageContainer: {
         '& a': {
@@ -211,7 +232,6 @@ const Work = () => {
         <div className={classes.projectContainer} id="projects" ref={revealTitle}>
             <h2 className={classes.h2}>Some Things I've Built</h2>
             <ul className={classes.projects}>
-
                 {featuredData?.projects && featuredData.projects.map((project, i) => {
                     return (
                         <li key={i} className={classes.listItem}>
