@@ -7,7 +7,7 @@ const jobData = {
             title: 'Software Engineer',
             location: 'Redmond, WA',
             range: 'December 2021 - present',
-            roleDescription: ['TBD'],
+            roleDescription: ['Migrating Legacy Logic Apps Interface into a new designer interface'],
         },
         {
             startDate: '01-20-2021',

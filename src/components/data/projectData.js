@@ -10,7 +10,7 @@ const projectData = {
                     Why do so few songs in Spotify have lyrics? Automatically
                     generate the lyrics when choosing your music with this app
                     (built-in music player as well). Built using Spotify API and
-                    Lyric Finder API
+                    Lyric Finder API [Deprecated because new Spotify lyrics 😠]
                 </p>
             ),
             stack: ['JavaScript', 'React', 'Bootstrap', 'Express'],

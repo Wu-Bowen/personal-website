@@ -1,6 +1,7 @@
 import SpotilyticsImage from './images/spotilytics.PNG'
 import MovieDBImage from './images/movieDB.PNG'
 import ProjectNeo from './images/projectNeo.PNG'
+import MysticVillage from './images/mysticVillage.PNG'
 
 const featuredData = {
     projects: [
@@ -40,6 +41,16 @@ const featuredData = {
             image: ProjectNeo,
             external: '',
             github: 'https://github.com/Wu-Bowen/Project-Neo',
+        },
+        {
+            name: 'Mystic Village Apartments',
+            description: [
+                'Coming soon... Website Built for 888 Holdings LLC. Currently under development!',
+            ],
+            stack: ['JavaScript', 'React', 'Redux', 'FluentUI', 'Node'],
+            image: MysticVillage,
+            external: '',
+            github: '',
         },
     ],
 }
