@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.7bbae08e.chunk.css",
-    "main.js": "/static/js/main.b44f78c1.chunk.js",
-    "main.js.map": "/static/js/main.b44f78c1.chunk.js.map",
+    "main.css": "/static/css/main.608b3a92.chunk.css",
+    "main.js": "/static/js/main.18b8744f.chunk.js",
+    "main.js.map": "/static/js/main.18b8744f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c5a2fe3e.js",
     "runtime-main.js.map": "/static/js/runtime-main.c5a2fe3e.js.map",
     "static/js/2.a61b4d69.chunk.js": "/static/js/2.a61b4d69.chunk.js",
@@ -10,11 +10,12 @@
     "static/js/3.d0f7f78d.chunk.js": "/static/js/3.d0f7f78d.chunk.js",
     "static/js/3.d0f7f78d.chunk.js.map": "/static/js/3.d0f7f78d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.7bbae08e.chunk.css.map": "/static/css/main.7bbae08e.chunk.css.map",
+    "static/css/main.608b3a92.chunk.css.map": "/static/css/main.608b3a92.chunk.css.map",
     "static/js/2.a61b4d69.chunk.js.LICENSE.txt": "/static/js/2.a61b4d69.chunk.js.LICENSE.txt",
     "static/media/CO2.2fa0c0f5.pdf": "/static/media/CO2.2fa0c0f5.pdf",
     "static/media/Twitter_Sentiment_Analysis.972baba4.pdf": "/static/media/Twitter_Sentiment_Analysis.972baba4.pdf",
     "static/media/movieDB.c42e2c5a.PNG": "/static/media/movieDB.c42e2c5a.PNG",
+    "static/media/mysticVillage.000b7457.PNG": "/static/media/mysticVillage.000b7457.PNG",
     "static/media/profileImage.7a7a7019.jpg": "/static/media/profileImage.7a7a7019.jpg",
     "static/media/projectNeo.6a98573d.PNG": "/static/media/projectNeo.6a98573d.PNG",
     "static/media/resume.ff005c41.pdf": "/static/media/resume.ff005c41.pdf",
@@ -23,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.c5a2fe3e.js",
     "static/js/2.a61b4d69.chunk.js",
-    "static/css/main.7bbae08e.chunk.css",
-    "static/js/main.b44f78c1.chunk.js"
+    "static/css/main.608b3a92.chunk.css",
+    "static/js/main.18b8744f.chunk.js"
   ]
 }
