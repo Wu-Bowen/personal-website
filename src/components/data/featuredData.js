@@ -50,7 +50,7 @@ const featuredData = {
             stack: ['JavaScript', 'React', 'Redux', 'FluentUI', 'Node'],
             image: MysticVillage,
             external: '',
-            github: '',
+            github: 'https://github.com/Wu-Bowen/mystic_village',
         },
     ],
 }
