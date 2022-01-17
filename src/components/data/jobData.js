@@ -7,9 +7,7 @@ const jobData = {
             title: 'Software Engineer',
             location: 'Redmond, WA',
             range: 'December 2021 - present',
-            roleDescription: [
-                'TBD'
-            ]
+            roleDescription: ['TBD'],
         },
         {
             startDate: '01-20-2021',
@@ -23,8 +21,8 @@ const jobData = {
                 'Transitioned the web app’s Spring framework to Node’s Express to maintain continuity between front and backend',
                 'Developed new features including UI/UX changes using React, creation of APIs using Knex and Objection, construction of Oracle Exadata scripts, and contributions to the bank’s reusable component library',
                 'Utilized Jest and React-testing-library for unit testing, RAFT for automated functional testing, and Jenkins for integration testing and deployment',
-                'Worked with container deployment platforms including OpenShift and Ansible'
-            ]
+                'Worked with container deployment platforms including OpenShift and Ansible',
+            ],
         },
         {
             startDate: '05-10-2019',
@@ -38,8 +36,9 @@ const jobData = {
                 'Drastically improved the rendering capabilities of massive network graphs to be able to handle thousands of nodes from dozens by reducing CPU and memory usage',
                 'Implemented improvements to the backend microservices of the project to further analyze the clinical studies',
                 'Utilized popular JavaScript libraries including React-Redux.js, Node.js, Webpack.js, D3.js, and Sigma.js',
-            ]
-        }, {
+            ],
+        },
+        {
             startDate: '12-1-20',
             companyName: 'China Unicom',
             url: 'https://www.chinaunicomglobal.com/us/',
@@ -48,10 +47,10 @@ const jobData = {
             range: 'December 2018 - January 2019',
             roleDescription: [
                 'Developed an app that utilized Spring Data JPA to fetch and create APIs to relay potential errors of the surveillance system to a GUI built with JavaFX',
-                'Assisted developers to create a file system for customer database management; responsible for functional and unit testing'
-            ]
+                'Assisted developers to create a file system for customer database management; responsible for functional and unit testing',
+            ],
         },
-    ]
-};
+    ],
+}
 
-export default jobData;
+export default jobData

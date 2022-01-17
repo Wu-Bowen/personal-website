@@ -1,7 +1,7 @@
-  export const navDelay = 1000;
-  export const loaderDelay = 2000;
-  
-  export const KEY_CODES = {
+export const navDelay = 1000
+export const loaderDelay = 2000
+
+export const KEY_CODES = {
     ARROW_LEFT: 'ArrowLeft',
     ARROW_LEFT_IE11: 'Left',
     ARROW_RIGHT: 'ArrowRight',
@@ -16,4 +16,4 @@
     SPACE: ' ',
     SPACE_IE11: 'Spacebar',
     ENTER: 'Enter',
-  };
+}

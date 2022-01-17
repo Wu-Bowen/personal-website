@@ -1,14 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
-import makeStyles from '@mui/styles/makeStyles';
-import { Button } from '@mui/material/';
-import { Helmet } from 'react-helmet';
-import { NavHashLink as Link } from 'react-router-hash-link';
-import configs from './../config';
-import Pdf from './../files/resume.pdf';
-import useOnClickOutside from './../hooks/useOnClickOutside';
-import { KEY_CODES } from './../utils';
+import React, { useRef, useState, useEffect } from 'react'
+import makeStyles from '@mui/styles/makeStyles'
+import { Button } from '@mui/material/'
+import { Helmet } from 'react-helmet'
+import { NavHashLink as Link } from 'react-router-hash-link'
+import configs from './../config'
+import Pdf from './../files/resume.pdf'
+import useOnClickOutside from './../hooks/useOnClickOutside'
+import { KEY_CODES } from './../utils'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     hamburgerButton: {
         display: 'flex',
         justifyContent: 'center',
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
             bottom: '0',
             transform: 'rotate(-90deg)',
             transition: 'top 0.1s ease-out,opacity 0.1s ease-out 0.12s',
-        }
+        },
     },
     hamburgerIconOpen: {
         position: 'absolute',
@@ -109,8 +109,9 @@ const useStyles = makeStyles(theme => ({
             width: '80%',
             bottom: '-10px',
             transform: 'rotate(0)',
-            transition: 'bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19)',
-        }
+            transition:
+                'bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19)',
+        },
     },
     sideBarClose: {
         display: 'flex',
@@ -179,7 +180,7 @@ const useStyles = makeStyles(theme => ({
         '&:hover, &:focus, &:active': {
             color: theme.palette.primary.textColor,
             outline: '0',
-        }
+        },
     },
     highlight: {
         color: '#77ddaa',
@@ -205,92 +206,93 @@ const useStyles = makeStyles(theme => ({
         padding: '18px 50px',
         margin: '10% auto 0',
         width: 'max-content',
-    }
-}));
+    },
+}))
 const Menu = () => {
-    const classes = useStyles();
-    const [menuOpen, setMenuOpen] = useState(false);
+    const classes = useStyles()
+    const [menuOpen, setMenuOpen] = useState(false)
 
     const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
+        setMenuOpen(!menuOpen)
     }
 
-    const navRef = useRef(null);
-    const buttonRef = useRef(null);
+    const navRef = useRef(null)
+    const buttonRef = useRef(null)
 
-    let menuFocusables;
-    let firstFocusableEl;
-    let lastFocusableEl;
+    let menuFocusables
+    let firstFocusableEl
+    let lastFocusableEl
 
     const setFocusables = () => {
-        menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
-        firstFocusableEl = menuFocusables[0];
-        lastFocusableEl = menuFocusables[menuFocusables.length - 1];
-    };
+        menuFocusables = [
+            buttonRef.current,
+            ...Array.from(navRef.current.querySelectorAll('a')),
+        ]
+        firstFocusableEl = menuFocusables[0]
+        lastFocusableEl = menuFocusables[menuFocusables.length - 1]
+    }
 
     const handleBackwardTab = (e) => {
         if (document.activeElement === firstFocusableEl) {
-            e.preventDefault();
-            lastFocusableEl.focus();
+            e.preventDefault()
+            lastFocusableEl.focus()
         }
-    };
+    }
 
     const handleForwardTab = (e) => {
         if (document.activeElement === lastFocusableEl) {
-            e.preventDefault();
-            firstFocusableEl.focus();
+            e.preventDefault()
+            firstFocusableEl.focus()
         }
-    };
+    }
 
     const onKeyDown = (e) => {
         switch (e.key) {
             case KEY_CODES.ESCAPE:
             case KEY_CODES.ESCAPE_IE11: {
-                setMenuOpen(false);
-                break;
+                setMenuOpen(false)
+                break
             }
 
             case KEY_CODES.TAB: {
                 if (menuFocusables && menuFocusables.length === 1) {
-                    e.preventDefault();
-                    break;
+                    e.preventDefault()
+                    break
                 }
                 if (e.shiftKey) {
-                    handleBackwardTab(e);
+                    handleBackwardTab(e)
                 } else {
-                    handleForwardTab(e);
+                    handleForwardTab(e)
                 }
-                break;
+                break
             }
 
             default: {
-                break;
+                break
             }
         }
-    };
+    }
 
     const onResize = (e) => {
         if (e.currentTarget.innerWidth > 768) {
-            setMenuOpen(false);
+            setMenuOpen(false)
         }
-    };
+    }
 
     useEffect(() => {
-        document.addEventListener('keydown', onKeyDown);
-        window.addEventListener('resize', onResize);
+        document.addEventListener('keydown', onKeyDown)
+        window.addEventListener('resize', onResize)
 
-        setFocusables();
+        setFocusables()
 
         return () => {
-            document.removeEventListener('keydown', onKeyDown);
-            window.removeEventListener('resize', onResize);
-        };
-    }, []);
+            document.removeEventListener('keydown', onKeyDown)
+            window.removeEventListener('resize', onResize)
+        }
+    }, [])
 
-
-    const wrapperRef = useRef();
-    useOnClickOutside(wrapperRef, () => setMenuOpen(false));
-
+    const wrapperRef = useRef()
+    useOnClickOutside(wrapperRef, () => setMenuOpen(false))
 
     return (
         <div>
@@ -298,37 +300,56 @@ const Menu = () => {
                 <body className={menuOpen ? 'blur' : ''} />
             </Helmet>
             <div ref={wrapperRef}>
-                <div className={classes.hamburgerButton} onClick={toggleMenu} ref={buttonRef}>
+                <div
+                    className={classes.hamburgerButton}
+                    onClick={toggleMenu}
+                    ref={buttonRef}
+                >
                     <div className={classes.hamburgerInner}>
-                        <div className={menuOpen ?
-                            classes.hamburgerIconClose :
-                            classes.hamburgerIconOpen}
+                        <div
+                            className={
+                                menuOpen
+                                    ? classes.hamburgerIconClose
+                                    : classes.hamburgerIconOpen
+                            }
                         />
                     </div>
                 </div>
-                <div className={
-                    menuOpen ?
-                        classes.sideBarClose :
-                        classes.sideBarOpen}
+                <div
+                    className={
+                        menuOpen ? classes.sideBarClose : classes.sideBarOpen
+                    }
                 >
                     <nav ref={navRef} className={classes.navigation}>
                         {configs?.navLinks &&
                             configs.navLinks.map(({ url, name }, i) => (
-                                <Link key={i} smooth to={url} className={classes.link} onClick={() => setMenuOpen(false)}>
-                                    <span className={classes.highlight}> 0{i + 1}. </span> <br /> {name}
+                                <Link
+                                    key={i}
+                                    smooth
+                                    to={url}
+                                    className={classes.link}
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    <span className={classes.highlight}>
+                                        {' '}
+                                        0{i + 1}.{' '}
+                                    </span>{' '}
+                                    <br /> {name}
                                 </Link>
                             ))}
-                        <a className={classes.link} href={Pdf} rel="noopener noreferrer" target="_blank">
-                            <Button className={classes.resume} >
-                                Resume
-                            </Button>
+                        <a
+                            className={classes.link}
+                            href={Pdf}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <Button className={classes.resume}>Resume</Button>
                         </a>
                     </nav>
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-
-export default Menu;
+export default Menu

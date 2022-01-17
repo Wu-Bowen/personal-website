@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import makeStyles from '@mui/styles/makeStyles';
-import Side from './Side';
-import configs from './../config';
+import React from 'react'
+import PropTypes from 'prop-types'
+import makeStyles from '@mui/styles/makeStyles'
+import Side from './Side'
+import configs from './../config'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     emailContainer: {
         display: 'flex',
         flexDirection: 'column',
@@ -26,27 +26,29 @@ const useStyles = makeStyles(theme => ({
         writingMode: 'vertical-rl',
         fontFamily: '"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace',
         lineHeight: '18px',
-        color: theme.palette.secondary.main,  
+        color: theme.palette.secondary.main,
         textDecoration: 'none',
-        '&:hover, &:focus' : {
+        '&:hover, &:focus': {
             transform: 'translateY(-5px)',
-            color: theme.palette.primary.textColor
-        }
-    }
-}));
+            color: theme.palette.primary.textColor,
+        },
+    },
+}))
 
-const Email = ({isHome}) => {
-    const classes = useStyles();
+const Email = ({ isHome }) => {
+    const classes = useStyles()
     return (
         <Side isHome={isHome} orientation="right">
             <div className={classes.emailContainer}>
-                <a className={classes.anchor} href={`mailto:${configs.email}`}>{configs.email}</a>
+                <a className={classes.anchor} href={`mailto:${configs.email}`}>
+                    {configs.email}
+                </a>
             </div>
         </Side>
-    );
-};
+    )
+}
 Email.propTypes = {
     isHome: PropTypes.bool,
-};
+}
 
-export default Email;
+export default Email

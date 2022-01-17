@@ -1,7 +1,8 @@
 const configs = {
     email: 'ebw289@nyu.edu',
     secondEmail: 'ericwu692@yahoo.com',
-    socialMedia: [{
+    socialMedia: [
+        {
             name: 'GitHub',
             url: 'https://github.com/Wu-Bowen',
         },
@@ -22,7 +23,8 @@ const configs = {
             url: 'https://nyu-ossd-s20.github.io/Wu-Bowen-weekly/',
         },
     ],
-    navLinks: [{
+    navLinks: [
+        {
             name: 'About',
             url: '/#about',
         },
@@ -54,6 +56,6 @@ const configs = {
         viewFactor,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
-};
+}
 
-export default configs;
+export default configs

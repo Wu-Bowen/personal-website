@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import makeStyles from '@mui/styles/makeStyles';
-import featuredData from './../data/featuredData';
-import Icon from './..//Icons/Icons';
-import sr from './../../utils/sr';
+import React, { useEffect, useRef } from 'react'
+import makeStyles from '@mui/styles/makeStyles'
+import featuredData from './../data/featuredData'
+import Icon from './..//Icons/Icons'
+import sr from './../../utils/sr'
 import configs from './../../config'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     projectContainer: {
         margin: '0px auto',
         width: '80vw',
@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
             height: '1px',
             marginLeft: '25px',
             backgroundColor: theme.palette.secondary.mainLowest,
-        }
+        },
     },
     projects: {
         listStyle: 'none',
@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
             boxShadow: '0px 10px 30px -15px #37474f',
             transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
             '&:hover, &:focus': {
-                boxShadow: '0px 20px 30px -15px #37474f'
+                boxShadow: '0px 20px 30px -15px #37474f',
             },
         },
         '&:not(:last-of-type)': {
@@ -84,7 +84,6 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'right',
         zIndex: '2',
         pointerEvents: 'none',
-
     },
     featuredProject: {
         margin: '10px 0px',
@@ -95,7 +94,7 @@ const useStyles = makeStyles(theme => ({
     },
     projectTitle: {
         color: theme.palette.secondary.mainTint,
-        fontSize: 'clamp(20px, 4vw, 26px)'
+        fontSize: 'clamp(20px, 4vw, 26px)',
     },
 
     projectDescription: {
@@ -111,7 +110,7 @@ const useStyles = makeStyles(theme => ({
         pointerEvents: 'auto',
         '&:hover, &:focus': {
             boxShadow: '0 20px 30px -15px rgba(119, 221, 170, .2)',
-        }
+        },
     },
     techStack: {
         position: 'relative',
@@ -147,10 +146,9 @@ const useStyles = makeStyles(theme => ({
                 width: '20px',
                 '&:hover, &:focus': {
                     color: theme.palette.primary.textColor,
-                }
-            }
-
-        }
+                },
+            },
+        },
     },
     projectImageEven: {
         gridColumn: '6 / -1',
@@ -163,12 +161,11 @@ const useStyles = makeStyles(theme => ({
             '& img': {
                 width: '100%',
                 height: '100%',
-            }
+            },
         },
         ['@media (max-width:768px)']: {
             gridColumn: '1 / -1',
         },
-        
     },
     projectImageOdd: {
         gridColumn: '1 / 8',
@@ -180,7 +177,7 @@ const useStyles = makeStyles(theme => ({
             '& img': {
                 width: '100%',
                 height: '100%',
-            }
+            },
         },
         ['@media (max-width:768px)']: {
             gridColumn: '1 / -1',
@@ -197,10 +194,8 @@ const useStyles = makeStyles(theme => ({
             '& svg': {
                 color: theme.palette.secondary.main,
                 width: '20px',
-            }
-
-        }
-
+            },
+        },
     },
     image: {
         borderRadius: '4px',
@@ -212,103 +207,167 @@ const useStyles = makeStyles(theme => ({
             filter: 'none',
             transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
             color: theme.palette.primary.textColor,
-        }
-    }
-}));
+        },
+    },
+}))
 const Work = () => {
-    const classes = useStyles();
-    const revealTitle = useRef(null);
-    const revealProjects = useRef([]);
-    const revealImages = useRef([]);
+    const classes = useStyles()
+    const revealTitle = useRef(null)
+    const revealProjects = useRef([])
+    const revealImages = useRef([])
 
     useEffect(() => {
-        sr.reveal(revealTitle.current, configs.srConfig());
-        revealProjects.current.forEach((ref, i) => sr.reveal(ref, configs.srConfig(i * 100)));
-        revealImages.current.forEach((ref, i) => sr.reveal(ref, configs.srConfig(i * 100)));
-    }, []);
-
+        sr.reveal(revealTitle.current, configs.srConfig())
+        revealProjects.current.forEach((ref, i) =>
+            sr.reveal(ref, configs.srConfig(i * 100))
+        )
+        revealImages.current.forEach((ref, i) =>
+            sr.reveal(ref, configs.srConfig(i * 100))
+        )
+    }, [])
 
     return (
-        <div className={classes.projectContainer} id="projects" ref={revealTitle}>
+        <div
+            className={classes.projectContainer}
+            id="projects"
+            ref={revealTitle}
+        >
             <h2 className={classes.h2}>Some Things I've Built</h2>
             <ul className={classes.projects}>
-                {featuredData?.projects && featuredData.projects.map((project, i) => {
-                    return (
-                        <li key={i} className={classes.listItem}>
-                            <div key={i} className={i % 2 == 1 ? classes.projectContentEven : classes.projectContentOdd} ref={el => (revealProjects.current[i] = el)}>
-                                <div>
-                                    <p className={classes.featuredProject}> Featured Project </p>
-                                    <h3 className={classes.projectTitle}>
-                                        <a className={classes.titleAnchor}>{project.name}</a>
-                                    </h3>
-                                    <div className={classes.projectDescription}>
-                                        <p style={{ margin: '0px' }}>
-                                            {project.description}
-                                        </p>
-                                    </div>
-                                    {project.stack.length &&
-                                        <ul
-                                            className={classes.techStack}
-                                            style={
-                                                i % 2 == 1 ?
-                                                    {
-
-                                                    } : {
-                                                        justifyContent: 'flex-end'
-                                                    }
-                                            }
-
-                                        >
-                                            {project.stack.map((tech, j) => {
-                                                return (
-                                                    <li className={classes.techItem} key={j}>
-                                                        {tech}
-                                                    </li>
-                                                )
-                                            })}
-
-                                        </ul>
+                {featuredData?.projects &&
+                    featuredData.projects.map((project, i) => {
+                        return (
+                            <li key={i} className={classes.listItem}>
+                                <div
+                                    key={i}
+                                    className={
+                                        i % 2 == 1
+                                            ? classes.projectContentEven
+                                            : classes.projectContentOdd
                                     }
-                                    <div
-                                        className={classes.projectLinks}
-                                        style={i % 2 == 1 ? {
-                                            marginRight: '-10px',
-                                        } : {
-                                            marginLeft: '-10px',
-                                            justifyContent: 'flex-end',
-                                        }}>
-                                        {project.github.length > 0 &&
-                                            <a href={project.github} rel="noopener noreferrer" target="_blank" aria-label="GithubLink">
-                                                <Icon name="GitHub" />
+                                    ref={(el) =>
+                                        (revealProjects.current[i] = el)
+                                    }
+                                >
+                                    <div>
+                                        <p className={classes.featuredProject}>
+                                            {' '}
+                                            Featured Project{' '}
+                                        </p>
+                                        <h3 className={classes.projectTitle}>
+                                            <a className={classes.titleAnchor}>
+                                                {project.name}
                                             </a>
-                                        }
-                                        {project.external.length > 0 &&
-                                            <a href={project.external} rel="noopener noreferrer" target="_blank" aria-label="ExternalLink">
-                                                <Icon name="External" />
-                                            </a>
-                                        }
+                                        </h3>
+                                        <div
+                                            className={
+                                                classes.projectDescription
+                                            }
+                                        >
+                                            <p style={{ margin: '0px' }}>
+                                                {project.description}
+                                            </p>
+                                        </div>
+                                        {project.stack.length && (
+                                            <ul
+                                                className={classes.techStack}
+                                                style={
+                                                    i % 2 == 1
+                                                        ? {}
+                                                        : {
+                                                              justifyContent:
+                                                                  'flex-end',
+                                                          }
+                                                }
+                                            >
+                                                {project.stack.map(
+                                                    (tech, j) => {
+                                                        return (
+                                                            <li
+                                                                className={
+                                                                    classes.techItem
+                                                                }
+                                                                key={j}
+                                                            >
+                                                                {tech}
+                                                            </li>
+                                                        )
+                                                    }
+                                                )}
+                                            </ul>
+                                        )}
+                                        <div
+                                            className={classes.projectLinks}
+                                            style={
+                                                i % 2 == 1
+                                                    ? {
+                                                          marginRight: '-10px',
+                                                      }
+                                                    : {
+                                                          marginLeft: '-10px',
+                                                          justifyContent:
+                                                              'flex-end',
+                                                      }
+                                            }
+                                        >
+                                            {project.github.length > 0 && (
+                                                <a
+                                                    href={project.github}
+                                                    rel="noopener noreferrer"
+                                                    target="_blank"
+                                                    aria-label="GithubLink"
+                                                >
+                                                    <Icon name="GitHub" />
+                                                </a>
+                                            )}
+                                            {project.external.length > 0 && (
+                                                <a
+                                                    href={project.external}
+                                                    rel="noopener noreferrer"
+                                                    target="_blank"
+                                                    aria-label="ExternalLink"
+                                                >
+                                                    <Icon name="External" />
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={i % 2 == 1 ? classes.projectImageEven : classes.projectImageOdd} ref={el => (revealImages.current[i] = el)} >
-                                <div className={classes.imageContainer}>
-                                    <a href={project.external ? project.external : project.github ? project.github : '#'} rel="noopener noreferrer" target="_blank" aria-label="GithubLink">
-                                        <img
-                                            className={classes.image}
-                                            src={project.image}
-                                            alt="Headshot"
-                                        />
-                                    </a>
+                                <div
+                                    className={
+                                        i % 2 == 1
+                                            ? classes.projectImageEven
+                                            : classes.projectImageOdd
+                                    }
+                                    ref={(el) => (revealImages.current[i] = el)}
+                                >
+                                    <div className={classes.imageContainer}>
+                                        <a
+                                            href={
+                                                project.external
+                                                    ? project.external
+                                                    : project.github
+                                                    ? project.github
+                                                    : '#'
+                                            }
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                            aria-label="GithubLink"
+                                        >
+                                            <img
+                                                className={classes.image}
+                                                src={project.image}
+                                                alt="Headshot"
+                                            />
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-
-                        </li>
-                    )
-                })}
-
+                            </li>
+                        )
+                    })}
             </ul>
         </div>
-    );
-};
+    )
+}
 
-export default Work;
+export default Work

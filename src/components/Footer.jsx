@@ -1,9 +1,8 @@
-import React from 'react';
-import makeStyles from '@mui/styles/makeStyles';
-import { blueGrey } from '@mui/material/colors';
+import React from 'react'
+import makeStyles from '@mui/styles/makeStyles'
+import { blueGrey } from '@mui/material/colors'
 
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     footerContainer: {
         display: 'flex',
         justifyContent: 'center',
@@ -37,32 +36,39 @@ const useStyles = makeStyles(theme => ({
         '&:hover::after': {
             width: '100%',
         },
-        '&:hover' : {
+        '&:hover': {
             color: theme.palette.primary.textColorLower,
-        }
-    }
-
-
-}));
+        },
+    },
+}))
 
 const Footer = () => {
-    const classes = useStyles();
+    const classes = useStyles()
 
     return (
-        <div className={classes.footerContainer} >
+        <div className={classes.footerContainer}>
             <div className={classes.credits}>
                 Designed by&nbsp;
-                <a className={classes.anchor} href="https://github.com/bchiang7" rel="noopener noreferrer" target="_blank">
+                <a
+                    className={classes.anchor}
+                    href="https://github.com/bchiang7"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
                     Brittany Chiang
-                </a> &amp;
-                Built by&nbsp;
-                <a className={classes.anchor} href="https://github.com/Wu-Bowen/personal-website" rel="noopener noreferrer" target="_blank">
-                Eric Wu
+                </a>{' '}
+                &amp; Built by&nbsp;
+                <a
+                    className={classes.anchor}
+                    href="https://github.com/Wu-Bowen/personal-website"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    Eric Wu
                 </a>
             </div>
         </div>
+    )
+}
 
-    );
-};
-
-export default Footer;
+export default Footer

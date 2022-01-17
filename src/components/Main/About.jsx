@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import makeStyles from '@mui/styles/makeStyles';
+import React, { useEffect, useRef } from 'react'
+import makeStyles from '@mui/styles/makeStyles'
 import profileImage from './../../files/profileImage.jpg'
 
-import sr from './../../utils/sr';
+import sr from './../../utils/sr'
 import configs from './../../config'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     aboutContainer: {
         margin: '0px auto',
         width: '80vw',
@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
             height: '1px',
             marginLeft: '25px',
             backgroundColor: theme.palette.secondary.mainLowest,
-        }
+        },
     },
     h3: {
         marginTop: '10px',
@@ -71,7 +71,7 @@ const useStyles = makeStyles(theme => ({
         },
         '&:hover::after': {
             width: '100%',
-        }
+        },
     },
     list: {
         display: 'grid',
@@ -95,14 +95,14 @@ const useStyles = makeStyles(theme => ({
             color: theme.palette.primary.textColor,
             fontSize: '14px',
             lineHeight: '17px',
-        }
+        },
     },
     inner: {
         display: 'grid',
         gridTemplateColumns: '3fr 2fr',
         gap: '50px',
         ['@media (max-width:768px)']: {
-            display: 'block'
+            display: 'block',
         },
     },
     imageWrapper: {
@@ -160,46 +160,107 @@ const useStyles = makeStyles(theme => ({
         ['@media (max-width:768px)']: {
             paddingBottom: '60px',
         },
-    }
-}));
+    },
+}))
 const About = () => {
-    const classes = useStyles();
-    const revealContainer = useRef(null);
+    const classes = useStyles()
+    const revealContainer = useRef(null)
 
     useEffect(() => {
-        sr.reveal(revealContainer.current, configs.srConfig());
-    }, []);
+        sr.reveal(revealContainer.current, configs.srConfig())
+    }, [])
 
-    const skills = ['JavaScript (ES6+)', 'React', 'Node.js', 'MaterialUI', 'Java', 'SQL'];
+    const skills = ['JavaScript (ES6+)', 'React', 'Redux', 'Node', 'FluentUI']
 
     return (
         <div>
-            <div className={classes.aboutContainer} id="about" ref={revealContainer}>
+            <div
+                className={classes.aboutContainer}
+                id="about"
+                ref={revealContainer}
+            >
                 <h2 className={classes.h2}>About Me</h2>
 
                 <div className={classes.inner}>
                     <div className={classes.innerText}>
                         <div>
                             <p className={classes.p}>
-                                Hello! I'm Eric and welcome to my website. I've always enjoyed creating things, so naturally I branched into something I had spent hours on: computers.
-                                I was simply amazed by how some lines on a page could transition to an interactive, useful interface;
-                                this fascination was how I ended up in CS and continued my coding journey. Now that I have graduated from New York University (December 2020), I hope to
-                                follow my passions in game development and web application development.
+                                Hello! I'm Eric and welcome to my website. I've
+                                always enjoyed creating things, so naturally I
+                                branched into something I had spent hours on:
+                                computers. I was simply amazed by how some lines
+                                on a page could transition to an interactive,
+                                useful interface; this fascination was how I
+                                ended up in CS and continued my coding journey.
+                                Now that I have graduated from New York
+                                University (December 2020), I hope to follow my
+                                passions in game development and web application
+                                development.
                             </p>
 
                             <p className={classes.p}>
-                                Fast-forward to today, and I've had the privilege of working at{' '}
-                                <a className={classes.anchor} href="https://www.chinaunicomglobal.com/us/" rel="noopener noreferrer" target="_blank">a telecom company</a> and {' '}
-                                <a className={classes.anchor} href="https://www.pfizer.com/" rel="noopener noreferrer" target="_blank">a pharmaceutical giant</a>. Currently, I am a part of the Credit Risk Team at {' '}
-                                <a className={classes.anchor} href="https://about.bankofamerica.com/en" rel="noopener noreferrer" target="_blank">Bank of America</a> developing internal tools to measure capital
-                                risk of numerous investment companies.
+                                Fast-forward to today, and I've had the
+                                privilege of working at{' '}
+                                <a
+                                    className={classes.anchor}
+                                    href="https://www.chinaunicomglobal.com/us/"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    a telecom company
+                                </a>
+                                ,{' '}
+                                <a
+                                    className={classes.anchor}
+                                    href="https://www.pfizer.com/"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    a pharmaceutical giant
+                                </a>
+                                , and{' '}
+                                <a
+                                    className={classes.anchor}
+                                    href="https://about.bankofamerica.com/en"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    a global bank
+                                </a>
+                                . Most recently, I can be found at{' '}
+                                <a
+                                    className={classes.anchor}
+                                    href="https://www.microsoft.com/en-us/"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Microsoft
+                                </a>
+                                , where I've been working on the{' '}
+                                <a
+                                    className={classes.anchor}
+                                    href="https://azure.microsoft.com/en-us/services/logic-apps/#overview"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Logic Apps
+                                </a>{' '}
+                                team.
                             </p>
 
-                            <p className={classes.p}>Here are a few technologies I've been working with recently:</p>
+                            <p className={classes.p}>
+                                Here are a few technologies I've been working
+                                with recently:
+                            </p>
                         </div>
 
                         <ul className={classes.list}>
-                            {skills && skills.map((skill, i) => <li className={classes.listElement} key={i}>{skill}</li>)}
+                            {skills &&
+                                skills.map((skill, i) => (
+                                    <li className={classes.listElement} key={i}>
+                                        {skill}
+                                    </li>
+                                ))}
                         </ul>
                     </div>
 
@@ -214,7 +275,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default About;
+export default About

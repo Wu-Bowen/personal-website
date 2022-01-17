@@ -1,20 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
-import makeStyles from '@mui/styles/makeStyles';
-import jobData from './../data/jobData';
-import { KEY_CODES } from './../../utils';
-import { useMediaQuery } from "@mui/material/";
+import React, { useEffect, useRef, useState } from 'react'
+import makeStyles from '@mui/styles/makeStyles'
+import jobData from './../data/jobData'
+import { KEY_CODES } from './../../utils'
+import { useMediaQuery } from '@mui/material/'
 
 // import { srConfig } from '@config';
-import sr from './../../utils/sr';
+import sr from './../../utils/sr'
 import configs from './../../config'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     experienceContainer: {
         margin: '0px auto',
         width: '80vw',
         maxWidth: '700px',
         padding: '100px 0',
-        color: theme.palette.secondary.main
+        color: theme.palette.secondary.main,
     },
     tabList: {
         position: 'relative',
@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
             width: 'calc(100% + 25px)',
             paddingLeft: '25px',
             marginLeft: '-25px',
-        }
+        },
     },
     h2: {
         display: 'flex',
@@ -92,7 +92,7 @@ const useStyles = makeStyles(theme => ({
             padding: '0 15px 2px',
         },
         ['@media (max-width:768px)']: {
-            display:'flex',
+            display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             minWidth: '120px',
@@ -105,7 +105,7 @@ const useStyles = makeStyles(theme => ({
         '&:hover, &:focus': {
             backgroundColor: theme.palette.secondary.mainLowest,
             outline: 'none',
-        }
+        },
     },
     activeTab: {
         position: 'absolute',
@@ -128,7 +128,7 @@ const useStyles = makeStyles(theme => ({
         },
         ['@media (max-width:480px)']: {
             marginLeft: '25px',
-        }
+        },
     },
     tabPanels: {
         display: 'block',
@@ -137,7 +137,7 @@ const useStyles = makeStyles(theme => ({
         marginLeft: '20px',
         ['@media (max-width:768px)']: {
             marginLeft: '0px',
-        }
+        },
     },
     tabPanel: {
         width: '100%',
@@ -167,7 +167,7 @@ const useStyles = makeStyles(theme => ({
         },
         '&:hover::after': {
             width: '100%',
-        }
+        },
     },
     range: {
         marginBottom: '25px',
@@ -189,139 +189,178 @@ const useStyles = makeStyles(theme => ({
             left: '0px',
             color: theme.palette.primary.textColor,
         },
-
-    }
-}));
+    },
+}))
 const Experience = () => {
-    const matches = useMediaQuery('(max-width:768px)');
-    const classes = useStyles();
-    const [currentTab, setCurrentTab] = useState(0);
-    const [focusedTab, setFocusedTab] = useState(null);
-    const tabs = useRef([]);
-    const revealContainer = useRef(null);
+    const matches = useMediaQuery('(max-width:768px)')
+    const classes = useStyles()
+    const [currentTab, setCurrentTab] = useState(0)
+    const [focusedTab, setFocusedTab] = useState(null)
+    const tabs = useRef([])
+    const revealContainer = useRef(null)
 
     const onKeyDown = (e) => {
         switch (e.key) {
             case KEY_CODES.ARROW_UP: {
-                e.preventDefault();
-                setFocusedTab(focusedTab - 1);
-                break;
+                e.preventDefault()
+                setFocusedTab(focusedTab - 1)
+                break
             }
             case KEY_CODES.ARROW_DOWN: {
-                e.preventDefault();
-                setFocusedTab(focusedTab + 1);
-                break;
+                e.preventDefault()
+                setFocusedTab(focusedTab + 1)
+                break
             }
             case KEY_CODES.ENTER: {
-                setCurrentTab(focusedTab);
+                setCurrentTab(focusedTab)
                 // setCurrentTab(focusedTab)
             }
             default: {
-                break;
+                break
             }
         }
-    };
+    }
 
     useEffect(() => {
-        sr.reveal(revealContainer.current, configs.srConfig());
-    }, []);
+        sr.reveal(revealContainer.current, configs.srConfig())
+    }, [])
 
     useEffect(() => {
         if (tabs.current[focusedTab]) {
-            tabs.current[focusedTab].focus();
-            return;
+            tabs.current[focusedTab].focus()
+            return
         }
         if (focusedTab >= tabs.current.length) {
-            setFocusedTab(0);
+            setFocusedTab(0)
         }
         if (focusedTab < 0) {
-            setFocusedTab(tabs.current.length - 1);
+            setFocusedTab(tabs.current.length - 1)
         }
     }, [focusedTab])
 
     return (
-        <div className={classes.experienceContainer} id="experience" ref={revealContainer}>
-            <h2 className={classes.h2}>
-                Where I've Worked
-            </h2>
+        <div
+            className={classes.experienceContainer}
+            id="experience"
+            ref={revealContainer}
+        >
+            <h2 className={classes.h2}>Where I've Worked</h2>
             <div className={classes.inner}>
-                <div className={classes.tabList} role="tablist" aria-label="Job tabs" onKeyDown={(e) => { onKeyDown(e) }}>
-                    {jobData?.companies && jobData.companies.map((company, i) => {
-                        return (
-                            <button
-                                key={i}
-                                className={classes.tabButton}
-                                style={currentTab === i ? ({
-                                    color: '#77ddaa',
-                                    cursor: 'pointer',
-                                }
-                                ) : ({
-                                    color: '#8892b0',
-                                    cursor: 'pointer',
-                                })}
-                                onClick={() => { setCurrentTab(i) }}
-                                ref={el => (tabs.current[i] = el)}
-                                id={`tab-${i}`}
-                                role="tab"
-                                tabIndex={currentTab === i ? '0' : '-1'}
-                                aria-selected={currentTab === i ? '0' : '1'}
-                                aria-controls={`panel-${i}`}
-                            >
-                                <span> {company.companyName} </span>
-                            </button>
-                        )
-                    })}
-                    <div className={classes.activeTab} style={matches
-                        ? { transform: `translateX(${currentTab * 120}px)` }
-                        : { transform: `translateY(${currentTab * 50}px)` }}
+                <div
+                    className={classes.tabList}
+                    role="tablist"
+                    aria-label="Job tabs"
+                    onKeyDown={(e) => {
+                        onKeyDown(e)
+                    }}
+                >
+                    {jobData?.companies &&
+                        jobData.companies.map((company, i) => {
+                            return (
+                                <button
+                                    key={i}
+                                    className={classes.tabButton}
+                                    style={
+                                        currentTab === i
+                                            ? {
+                                                  color: '#77ddaa',
+                                                  cursor: 'pointer',
+                                              }
+                                            : {
+                                                  color: '#8892b0',
+                                                  cursor: 'pointer',
+                                              }
+                                    }
+                                    onClick={() => {
+                                        setCurrentTab(i)
+                                    }}
+                                    ref={(el) => (tabs.current[i] = el)}
+                                    id={`tab-${i}`}
+                                    role="tab"
+                                    tabIndex={currentTab === i ? '0' : '-1'}
+                                    aria-selected={currentTab === i ? '0' : '1'}
+                                    aria-controls={`panel-${i}`}
+                                >
+                                    <span> {company.companyName} </span>
+                                </button>
+                            )
+                        })}
+                    <div
+                        className={classes.activeTab}
+                        style={
+                            matches
+                                ? {
+                                      transform: `translateX(${
+                                          currentTab * 120
+                                      }px)`,
+                                  }
+                                : {
+                                      transform: `translateY(${
+                                          currentTab * 50
+                                      }px)`,
+                                  }
+                        }
                     />
                 </div>
 
-
                 <div className={classes.tabPanels}>
-                    {jobData?.companies && jobData.companies.map((company, i) => {
-                        return (
-                            <div
-                                key={i}
-                                className={classes.tabPanel}
-                                id={`panel-${i}`}
-                                role="tabpanel"
-                                tabIndex={currentTab === i ? '0' : '-1'}
-                                aria-labelledby={`tab-${i}`}
-                                aria-hidden={currentTab !== i}
-                                hidden={currentTab !== i}
-                            >
-                                <h3 className={classes.h3}>
-                                    <span> {company.title} </span>
-                                    <span className="company">
-                                        {' @ '}
-                                        <a href={company.url} className={classes.anchor} rel="noopener noreferrer" target="_blank">
-                                            {company.companyName}
-                                        </a>
-                                    </span>
-                                </h3>
-                                <p className="range">
-                                    <span className={classes.range}>
-                                        {company.range}
-                                    </span>
-                                </p>
-                                <ul className={classes.descriptionContainer}>
-                                    {company.roleDescription.map((description, j) => {
-                                        return (
-                                            <li key={j} className={classes.descriptionContent}>
-                                                {description}
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-
-                        )
-                    })}
+                    {jobData?.companies &&
+                        jobData.companies.map((company, i) => {
+                            return (
+                                <div
+                                    key={i}
+                                    className={classes.tabPanel}
+                                    id={`panel-${i}`}
+                                    role="tabpanel"
+                                    tabIndex={currentTab === i ? '0' : '-1'}
+                                    aria-labelledby={`tab-${i}`}
+                                    aria-hidden={currentTab !== i}
+                                    hidden={currentTab !== i}
+                                >
+                                    <h3 className={classes.h3}>
+                                        <span> {company.title} </span>
+                                        <span className="company">
+                                            {' @ '}
+                                            <a
+                                                href={company.url}
+                                                className={classes.anchor}
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                            >
+                                                {company.companyName}
+                                            </a>
+                                        </span>
+                                    </h3>
+                                    <p className="range">
+                                        <span className={classes.range}>
+                                            {company.range}
+                                        </span>
+                                    </p>
+                                    <ul
+                                        className={classes.descriptionContainer}
+                                    >
+                                        {company.roleDescription.map(
+                                            (description, j) => {
+                                                return (
+                                                    <li
+                                                        key={j}
+                                                        className={
+                                                            classes.descriptionContent
+                                                        }
+                                                    >
+                                                        {description}
+                                                    </li>
+                                                )
+                                            }
+                                        )}
+                                    </ul>
+                                </div>
+                            )
+                        })}
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Experience;
+export default Experience

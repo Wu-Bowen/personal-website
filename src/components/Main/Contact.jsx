@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
-import makeStyles from '@mui/styles/makeStyles';
-import sr from './../../utils/sr';
+import React, { useEffect, useRef, useState } from 'react'
+import makeStyles from '@mui/styles/makeStyles'
+import sr from './../../utils/sr'
 import configs from './../../config'
 import './../../styles/transitions.css'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     contactContainer: {
         margin: '0px auto 0px',
         maxWidth: '600px',
@@ -64,29 +64,36 @@ const useStyles = makeStyles(theme => ({
         },
         margin: 'auto',
         marginTop: '40px',
-    }
-}));
+    },
+}))
 
 const Contact = () => {
-    const classes = useStyles();
-    const revealContact = useRef(null);
+    const classes = useStyles()
+    const revealContact = useRef(null)
 
     useEffect(() => {
-        sr.reveal(revealContact.current, configs.srConfig());
-    }, []);
+        sr.reveal(revealContact.current, configs.srConfig())
+    }, [])
 
     return (
-        <div className={classes.contactContainer} id="contact" ref={revealContact}>
+        <div
+            className={classes.contactContainer}
+            id="contact"
+            ref={revealContact}
+        >
             <h2 className={classes.h2}> What's Next? </h2>
             <h2 className={classes.title}>Get In Touch</h2>
-            <p className={classes.text}> Feel free to contact me, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to your mail :D
+            <p className={classes.text}>
+                {' '}
+                Feel free to contact me, my inbox is always open. Whether you
+                have a question or just want to say hi, I'll try my best to get
+                back to your mail :D
             </p>
             <a className={classes.email} href={`mailto:${configs.email}`}>
                 Say Hello
             </a>
         </div>
+    )
+}
 
-    );
-};
-
-export default Contact;
+export default Contact

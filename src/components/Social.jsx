@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import configs from '../config';
-import Side from './Side';
-import Icon from './Icons/Icons';
-import makeStyles from '@mui/styles/makeStyles';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import configs from '../config'
+import Side from './Side'
+import Icon from './Icons/Icons'
+import makeStyles from '@mui/styles/makeStyles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     socialContainer: {
         flexDirection: 'column',
         alignItems: 'center',
@@ -35,13 +35,13 @@ const useStyles = makeStyles(theme => ({
             transform: 'translateY(-3px)',
             '& svg': {
                 color: theme.palette.primary.textColor,
-            }
+            },
         },
     },
-}));
+}))
 
 const Social = ({ isHome }) => {
-    const classes = useStyles();
+    const classes = useStyles()
     return (
         <Side isHome={isHome} orientation="left">
             <div className={classes.socialContainer}>
@@ -53,7 +53,8 @@ const Social = ({ isHome }) => {
                                 href={url}
                                 aria-label={name}
                                 target="_blank"
-                                rel="noopener noreferrer">
+                                rel="noopener noreferrer"
+                            >
                                 <Icon name={name} />
                             </a>
                         </li>
@@ -61,10 +62,10 @@ const Social = ({ isHome }) => {
             </div>
         </Side>
     )
-};
+}
 
 Social.propTypes = {
     isHome: PropTypes.bool,
-};
+}
 
-export default Social;
+export default Social
