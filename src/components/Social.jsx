@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import configs from '../config'
-import Side from './Side'
-import Icon from './Icons/Icons'
-import makeStyles from '@mui/styles/makeStyles'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import configs from '../config';
+import Side from './Side';
+import Icon from './Icons/Icons';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
     socialContainer: {
@@ -38,10 +38,10 @@ const useStyles = makeStyles((theme) => ({
             },
         },
     },
-}))
+}));
 
 const Social = ({ isHome }) => {
-    const classes = useStyles()
+    const classes = useStyles();
     return (
         <Side isHome={isHome} orientation="left">
             <div className={classes.socialContainer}>
@@ -61,11 +61,11 @@ const Social = ({ isHome }) => {
                     ))}
             </div>
         </Side>
-    )
-}
+    );
+};
 
 Social.propTypes = {
     isHome: PropTypes.bool,
-}
+};
 
-export default Social
+export default Social;

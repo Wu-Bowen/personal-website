@@ -1,8 +1,8 @@
-import './App.css'
-import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles'
-import Website from './components/Website'
-import theme from './styles/Theme'
+import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import Website from './components/Website';
+import theme from './styles/Theme';
 
 const App = () => {
     return (
@@ -13,7 +13,7 @@ const App = () => {
                 </ThemeProvider>
             </StyledEngineProvider>
         </BrowserRouter>
-    )
-}
+    );
+};
 
-export default App
+export default App;

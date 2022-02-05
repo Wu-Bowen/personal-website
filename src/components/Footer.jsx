@@ -1,6 +1,6 @@
-import React from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import { blueGrey } from '@mui/material/colors'
+import React from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import { blueGrey } from '@mui/material/colors';
 
 const useStyles = makeStyles((theme) => ({
     footerContainer: {
@@ -40,10 +40,10 @@ const useStyles = makeStyles((theme) => ({
             color: theme.palette.primary.textColorLower,
         },
     },
-}))
+}));
 
 const Footer = () => {
-    const classes = useStyles()
+    const classes = useStyles();
 
     return (
         <div className={classes.footerContainer}>
@@ -68,7 +68,7 @@ const Footer = () => {
                 </a>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

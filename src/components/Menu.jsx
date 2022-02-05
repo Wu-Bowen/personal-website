@@ -1,12 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import { Button } from '@mui/material/'
-import { Helmet } from 'react-helmet'
-import { NavHashLink as Link } from 'react-router-hash-link'
-import configs from './../config'
-import Pdf from './../files/resume.pdf'
-import useOnClickOutside from './../hooks/useOnClickOutside'
-import { KEY_CODES } from './../utils'
+import React, { useRef, useState, useEffect } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import { Button } from '@mui/material/';
+import { Helmet } from 'react-helmet';
+import { NavHashLink as Link } from 'react-router-hash-link';
+import configs from './../config';
+import Pdf from './../files/resume.pdf';
+import useOnClickOutside from './../hooks/useOnClickOutside';
+import { KEY_CODES } from './../utils';
 
 const useStyles = makeStyles((theme) => ({
     hamburgerButton: {
@@ -207,92 +207,92 @@ const useStyles = makeStyles((theme) => ({
         margin: '10% auto 0',
         width: 'max-content',
     },
-}))
+}));
 const Menu = () => {
-    const classes = useStyles()
-    const [menuOpen, setMenuOpen] = useState(false)
+    const classes = useStyles();
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        setMenuOpen(!menuOpen)
-    }
+        setMenuOpen(!menuOpen);
+    };
 
-    const navRef = useRef(null)
-    const buttonRef = useRef(null)
+    const navRef = useRef(null);
+    const buttonRef = useRef(null);
 
-    let menuFocusables
-    let firstFocusableEl
-    let lastFocusableEl
+    let menuFocusables;
+    let firstFocusableEl;
+    let lastFocusableEl;
 
     const setFocusables = () => {
         menuFocusables = [
             buttonRef.current,
             ...Array.from(navRef.current.querySelectorAll('a')),
-        ]
-        firstFocusableEl = menuFocusables[0]
-        lastFocusableEl = menuFocusables[menuFocusables.length - 1]
-    }
+        ];
+        firstFocusableEl = menuFocusables[0];
+        lastFocusableEl = menuFocusables[menuFocusables.length - 1];
+    };
 
     const handleBackwardTab = (e) => {
         if (document.activeElement === firstFocusableEl) {
-            e.preventDefault()
-            lastFocusableEl.focus()
+            e.preventDefault();
+            lastFocusableEl.focus();
         }
-    }
+    };
 
     const handleForwardTab = (e) => {
         if (document.activeElement === lastFocusableEl) {
-            e.preventDefault()
-            firstFocusableEl.focus()
+            e.preventDefault();
+            firstFocusableEl.focus();
         }
-    }
+    };
 
     const onKeyDown = (e) => {
         switch (e.key) {
             case KEY_CODES.ESCAPE:
             case KEY_CODES.ESCAPE_IE11: {
-                setMenuOpen(false)
-                break
+                setMenuOpen(false);
+                break;
             }
 
             case KEY_CODES.TAB: {
                 if (menuFocusables && menuFocusables.length === 1) {
-                    e.preventDefault()
-                    break
+                    e.preventDefault();
+                    break;
                 }
                 if (e.shiftKey) {
-                    handleBackwardTab(e)
+                    handleBackwardTab(e);
                 } else {
-                    handleForwardTab(e)
+                    handleForwardTab(e);
                 }
-                break
+                break;
             }
 
             default: {
-                break
+                break;
             }
         }
-    }
+    };
 
     const onResize = (e) => {
         if (e.currentTarget.innerWidth > 768) {
-            setMenuOpen(false)
+            setMenuOpen(false);
         }
-    }
+    };
 
     useEffect(() => {
-        document.addEventListener('keydown', onKeyDown)
-        window.addEventListener('resize', onResize)
+        document.addEventListener('keydown', onKeyDown);
+        window.addEventListener('resize', onResize);
 
-        setFocusables()
+        setFocusables();
 
         return () => {
-            document.removeEventListener('keydown', onKeyDown)
-            window.removeEventListener('resize', onResize)
-        }
-    }, [])
+            document.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener('resize', onResize);
+        };
+    }, []);
 
-    const wrapperRef = useRef()
-    useOnClickOutside(wrapperRef, () => setMenuOpen(false))
+    const wrapperRef = useRef();
+    useOnClickOutside(wrapperRef, () => setMenuOpen(false));
 
     return (
         <div>
@@ -349,7 +349,7 @@ const Menu = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Menu
+export default Menu;

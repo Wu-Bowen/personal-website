@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import configs from '../../config'
-import { loaderDelay, navDelay } from '../../utils/index'
-import './../../styles/transitions.css'
+import React, { useState, useEffect } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import configs from '../../config';
+import { loaderDelay, navDelay } from '../../utils/index';
+import './../../styles/transitions.css';
 
 const useStyles = makeStyles((theme) => ({
     introContainer: {
@@ -81,19 +81,19 @@ const useStyles = makeStyles((theme) => ({
             outline: 'none',
         },
     },
-}))
+}));
 
 const Intro = () => {
-    const classes = useStyles()
-    const [isMounted, setIsMounted] = useState(false)
+    const classes = useStyles();
+    const [isMounted, setIsMounted] = useState(false);
     useEffect(() => {
-        const timeout = setTimeout(() => setIsMounted(true), navDelay)
-        return () => clearTimeout(timeout)
-    }, [])
+        const timeout = setTimeout(() => setIsMounted(true), navDelay);
+        return () => clearTimeout(timeout);
+    }, []);
 
-    const one = <h1 className={classes.h1}>Hello, my name is </h1>
-    const two = <h2 className={classes.h2}>Eric Wu.</h2>
-    const three = <h3 className={classes.h3}>I am an app developer.</h3>
+    const one = <h1 className={classes.h1}>Hello, my name is </h1>;
+    const two = <h2 className={classes.h2}>Eric Wu.</h2>;
+    const three = <h3 className={classes.h3}>I am an app developer.</h3>;
     const four = (
         <p className={classes.p}>
             I'm a recently graduated developer who specializes in designing and
@@ -109,14 +109,14 @@ const Intro = () => {
             </a>{' '}
             where I am working on their Azure Logic Apps service.
         </p>
-    )
+    );
     const five = (
         <a href={`mailto:${configs.email}`} className={classes.emailLink}>
             Get In Touch
         </a>
-    )
+    );
 
-    const items = [one, two, three, four, five]
+    const items = [one, two, three, four, five];
     return (
         <div className={classes.introContainer}>
             <TransitionGroup component={null}>
@@ -135,7 +135,7 @@ const Intro = () => {
                     ))}
             </TransitionGroup>
         </div>
-    )
-}
+    );
+};
 
-export default Intro
+export default Intro;

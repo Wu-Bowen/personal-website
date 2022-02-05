@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import sr from './../../utils/sr'
-import configs from './../../config'
-import './../../styles/transitions.css'
+import React, { useEffect, useRef, useState } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import sr from './../../utils/sr';
+import configs from './../../config';
+import './../../styles/transitions.css';
 
 const useStyles = makeStyles((theme) => ({
     contactContainer: {
@@ -65,15 +65,15 @@ const useStyles = makeStyles((theme) => ({
         margin: 'auto',
         marginTop: '40px',
     },
-}))
+}));
 
 const Contact = () => {
-    const classes = useStyles()
-    const revealContact = useRef(null)
+    const classes = useStyles();
+    const revealContact = useRef(null);
 
     useEffect(() => {
-        sr.reveal(revealContact.current, configs.srConfig())
-    }, [])
+        sr.reveal(revealContact.current, configs.srConfig());
+    }, []);
 
     return (
         <div
@@ -93,7 +93,7 @@ const Contact = () => {
                 Say Hello
             </a>
         </div>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;

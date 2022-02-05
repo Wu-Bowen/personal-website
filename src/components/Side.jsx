@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import { loaderDelay } from '../utils/index'
-import makeStyles from '@mui/styles/makeStyles'
-import Slide from '@mui/material/Slide'
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { loaderDelay } from '../utils/index';
+import makeStyles from '@mui/styles/makeStyles';
+import Slide from '@mui/material/Slide';
 
 const useStyles = makeStyles((theme) => ({
     leftOrientation: {
@@ -27,18 +27,18 @@ const useStyles = makeStyles((theme) => ({
             display: 'none',
         },
     },
-}))
+}));
 const Side = ({ children, isHome, orientation }) => {
-    const classes = useStyles()
-    const [isMounted, setIsMounted] = useState(!isHome)
+    const classes = useStyles();
+    const [isMounted, setIsMounted] = useState(!isHome);
 
     useEffect(() => {
         if (!isHome) {
-            return
+            return;
         }
-        const timeout = setTimeout(() => setIsMounted(true), loaderDelay)
-        return () => clearTimeout(timeout)
-    }, [])
+        const timeout = setTimeout(() => setIsMounted(true), loaderDelay);
+        return () => clearTimeout(timeout);
+    }, []);
 
     return (
         <div
@@ -52,13 +52,13 @@ const Side = ({ children, isHome, orientation }) => {
                 {children}
             </Slide>
         </div>
-    )
-}
+    );
+};
 
 Side.propTypes = {
     children: PropTypes.node.isRequired,
     orientation: PropTypes.string.isRequired,
     isHome: PropTypes.bool,
-}
+};
 
-export default Side
+export default Side;

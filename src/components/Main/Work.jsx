@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import featuredData from './../data/featuredData'
-import Icon from './..//Icons/Icons'
-import sr from './../../utils/sr'
-import configs from './../../config'
+import React, { useEffect, useRef } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import featuredData from './../data/featuredData';
+import Icon from './..//Icons/Icons';
+import sr from './../../utils/sr';
+import configs from './../../config';
 
 const useStyles = makeStyles((theme) => ({
     projectContainer: {
@@ -209,22 +209,22 @@ const useStyles = makeStyles((theme) => ({
             color: theme.palette.primary.textColor,
         },
     },
-}))
+}));
 const Work = () => {
-    const classes = useStyles()
-    const revealTitle = useRef(null)
-    const revealProjects = useRef([])
-    const revealImages = useRef([])
+    const classes = useStyles();
+    const revealTitle = useRef(null);
+    const revealProjects = useRef([]);
+    const revealImages = useRef([]);
 
     useEffect(() => {
-        sr.reveal(revealTitle.current, configs.srConfig())
+        sr.reveal(revealTitle.current, configs.srConfig());
         revealProjects.current.forEach((ref, i) =>
             sr.reveal(ref, configs.srConfig(i * 100))
-        )
+        );
         revealImages.current.forEach((ref, i) =>
             sr.reveal(ref, configs.srConfig(i * 100))
-        )
-    }, [])
+        );
+    }, []);
 
     return (
         <div
@@ -291,7 +291,7 @@ const Work = () => {
                                                             >
                                                                 {tech}
                                                             </li>
-                                                        )
+                                                        );
                                                     }
                                                 )}
                                             </ul>
@@ -363,11 +363,11 @@ const Work = () => {
                                     </div>
                                 </div>
                             </li>
-                        )
+                        );
                     })}
             </ul>
         </div>
-    )
-}
+    );
+};
 
-export default Work
+export default Work;

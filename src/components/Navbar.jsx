@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { AppBar, Toolbar, Grid, Button, useMediaQuery } from '@mui/material/'
-import Menu from './Menu'
-import makeStyles from '@mui/styles/makeStyles'
-import { NavHashLink as Link } from 'react-router-hash-link'
-import Pdf from './../files/resume.pdf'
-import { loaderDelay } from '../utils/index'
-import IconLoader from './Icons/IconLoader'
-import useScrollDirection from './../hooks/useScrollDirection'
-import { useLocation } from 'react-router-dom'
-import configs from './../config'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import './../styles/transitions.css'
+import React, { useState, useEffect } from 'react';
+import { AppBar, Toolbar, Grid, Button, useMediaQuery } from '@mui/material/';
+import Menu from './Menu';
+import makeStyles from '@mui/styles/makeStyles';
+import { NavHashLink as Link } from 'react-router-hash-link';
+import Pdf from './../files/resume.pdf';
+import { loaderDelay } from '../utils/index';
+import IconLoader from './Icons/IconLoader';
+import useScrollDirection from './../hooks/useScrollDirection';
+import { useLocation } from 'react-router-dom';
+import configs from './../config';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './../styles/transitions.css';
 
 const useStyles = makeStyles((theme) => ({
     appBarHide: {
@@ -80,58 +80,58 @@ const useStyles = makeStyles((theme) => ({
         height: '48px',
         bottom: '15px',
     },
-}))
+}));
 
 const Navbar = ({ isHome }) => {
-    const matches = useMediaQuery('(min-width:768px)')
-    const classes = useStyles()
+    const matches = useMediaQuery('(min-width:768px)');
+    const classes = useStyles();
     const activeStyle = {
         color: '#77ddaa',
         border: '1px dashed #77ddaa',
-    }
-    const location = useLocation()
-    const [color, setColor] = useState('none')
-    const [isMounted, setIsMounted] = useState(!isHome)
-    const scrollDirection = useScrollDirection('down')
-    const [scrolledToTop, setScrolledToTop] = useState(true)
+    };
+    const location = useLocation();
+    const [color, setColor] = useState('none');
+    const [isMounted, setIsMounted] = useState(!isHome);
+    const scrollDirection = useScrollDirection('down');
+    const [scrolledToTop, setScrolledToTop] = useState(true);
 
     const handleScroll = () => {
-        setScrolledToTop(window.pageYOffset < 50)
-    }
+        setScrolledToTop(window.pageYOffset < 50);
+    };
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setIsMounted(true)
-        }, 100)
+            setIsMounted(true);
+        }, 100);
 
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll);
         return () => {
-            clearTimeout(timeout)
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+            clearTimeout(timeout);
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     useEffect(() => {
         if (location.hash) {
             if (
                 configs.navLinks
                     .map((navLink) => {
-                        return navLink.url.substring(1)
+                        return navLink.url.substring(1);
                     })
                     .includes(location.hash)
             ) {
                 document
                     .getElementById(location.hash.substring(1))
-                    .scrollIntoView({ behavior: 'smooth' })
+                    .scrollIntoView({ behavior: 'smooth' });
             } else {
-                window.location.hash = ''
+                window.location.hash = '';
             }
         }
-    }, [isMounted])
+    }, [isMounted]);
 
     const handleLogo = () => {
-        window.location = window.location.href.split('#')[0]
-    }
+        window.location = window.location.href.split('#')[0];
+    };
     return (
         <AppBar
             position="fixed"
@@ -269,7 +269,7 @@ const Navbar = ({ isHome }) => {
                 </div>
             </Toolbar>
         </AppBar>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

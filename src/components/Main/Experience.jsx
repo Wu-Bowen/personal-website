@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import jobData from './../data/jobData'
-import { KEY_CODES } from './../../utils'
-import { useMediaQuery } from '@mui/material/'
+import React, { useEffect, useRef, useState } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import jobData from './../data/jobData';
+import { KEY_CODES } from './../../utils';
+import { useMediaQuery } from '@mui/material/';
 
 // import { srConfig } from '@config';
-import sr from './../../utils/sr'
-import configs from './../../config'
+import sr from './../../utils/sr';
+import configs from './../../config';
 
 const useStyles = makeStyles((theme) => ({
     experienceContainer: {
@@ -190,53 +190,53 @@ const useStyles = makeStyles((theme) => ({
             color: theme.palette.primary.textColor,
         },
     },
-}))
+}));
 const Experience = () => {
-    const matches = useMediaQuery('(max-width:768px)')
-    const classes = useStyles()
-    const [currentTab, setCurrentTab] = useState(0)
-    const [focusedTab, setFocusedTab] = useState(null)
-    const tabs = useRef([])
-    const revealContainer = useRef(null)
+    const matches = useMediaQuery('(max-width:768px)');
+    const classes = useStyles();
+    const [currentTab, setCurrentTab] = useState(0);
+    const [focusedTab, setFocusedTab] = useState(null);
+    const tabs = useRef([]);
+    const revealContainer = useRef(null);
 
     const onKeyDown = (e) => {
         switch (e.key) {
             case KEY_CODES.ARROW_UP: {
-                e.preventDefault()
-                setFocusedTab(focusedTab - 1)
-                break
+                e.preventDefault();
+                setFocusedTab(focusedTab - 1);
+                break;
             }
             case KEY_CODES.ARROW_DOWN: {
-                e.preventDefault()
-                setFocusedTab(focusedTab + 1)
-                break
+                e.preventDefault();
+                setFocusedTab(focusedTab + 1);
+                break;
             }
             case KEY_CODES.ENTER: {
-                setCurrentTab(focusedTab)
+                setCurrentTab(focusedTab);
                 // setCurrentTab(focusedTab)
             }
             default: {
-                break
+                break;
             }
         }
-    }
+    };
 
     useEffect(() => {
-        sr.reveal(revealContainer.current, configs.srConfig())
-    }, [])
+        sr.reveal(revealContainer.current, configs.srConfig());
+    }, []);
 
     useEffect(() => {
         if (tabs.current[focusedTab]) {
-            tabs.current[focusedTab].focus()
-            return
+            tabs.current[focusedTab].focus();
+            return;
         }
         if (focusedTab >= tabs.current.length) {
-            setFocusedTab(0)
+            setFocusedTab(0);
         }
         if (focusedTab < 0) {
-            setFocusedTab(tabs.current.length - 1)
+            setFocusedTab(tabs.current.length - 1);
         }
-    }, [focusedTab])
+    }, [focusedTab]);
 
     return (
         <div
@@ -251,7 +251,7 @@ const Experience = () => {
                     role="tablist"
                     aria-label="Job tabs"
                     onKeyDown={(e) => {
-                        onKeyDown(e)
+                        onKeyDown(e);
                     }}
                 >
                     {jobData?.companies &&
@@ -272,7 +272,7 @@ const Experience = () => {
                                               }
                                     }
                                     onClick={() => {
-                                        setCurrentTab(i)
+                                        setCurrentTab(i);
                                     }}
                                     ref={(el) => (tabs.current[i] = el)}
                                     id={`tab-${i}`}
@@ -283,7 +283,7 @@ const Experience = () => {
                                 >
                                     <span> {company.companyName} </span>
                                 </button>
-                            )
+                            );
                         })}
                     <div
                         className={classes.activeTab}
@@ -350,17 +350,17 @@ const Experience = () => {
                                                     >
                                                         {description}
                                                     </li>
-                                                )
+                                                );
                                             }
                                         )}
                                     </ul>
                                 </div>
-                            )
+                            );
                         })}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Experience
+export default Experience;

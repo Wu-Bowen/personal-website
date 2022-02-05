@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import profileImage from './../../files/profileImage.jpg'
+import React, { useEffect, useRef } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import profileImage from './../../files/profileImage.jpg';
 
-import sr from './../../utils/sr'
-import configs from './../../config'
+import sr from './../../utils/sr';
+import configs from './../../config';
 
 const useStyles = makeStyles((theme) => ({
     aboutContainer: {
@@ -161,16 +161,16 @@ const useStyles = makeStyles((theme) => ({
             paddingBottom: '60px',
         },
     },
-}))
+}));
 const About = () => {
-    const classes = useStyles()
-    const revealContainer = useRef(null)
+    const classes = useStyles();
+    const revealContainer = useRef(null);
 
     useEffect(() => {
-        sr.reveal(revealContainer.current, configs.srConfig())
-    }, [])
+        sr.reveal(revealContainer.current, configs.srConfig());
+    }, []);
 
-    const skills = ['JavaScript (ES6+)', 'React', 'Redux', 'Node', 'FluentUI']
+    const skills = ['JavaScript (ES6+)', 'React', 'Redux', 'Node', 'FluentUI'];
 
     return (
         <div>
@@ -275,7 +275,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default About
+export default About;

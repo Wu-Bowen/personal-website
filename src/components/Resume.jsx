@@ -1,5 +1,5 @@
-import Pdf from './../files/resume.pdf'
-import React from 'react'
+import Pdf from './../files/resume.pdf';
+import React from 'react';
 
 const Resume = () => {
     return (
@@ -8,7 +8,7 @@ const Resume = () => {
                 Download Pdf
             </a>
         </div>
-    )
-}
+    );
+};
 
-export default Resume
+export default Resume;

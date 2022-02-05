@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const IconLoader = ({ color }) => (
     <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="120 0 400 400">
@@ -26,6 +26,6 @@ const IconLoader = ({ color }) => (
             />
         </g>
     </svg>
-)
+);
 
-export default IconLoader
+export default IconLoader;

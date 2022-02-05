@@ -1,5 +1,5 @@
-import NLP_PAPER from './Twitter_Sentiment_Analysis.pdf'
-import CO2_PAPER from './CO2.pdf'
+import NLP_PAPER from './Twitter_Sentiment_Analysis.pdf';
+import CO2_PAPER from './CO2.pdf';
 const projectData = {
     projects: [
         {
@@ -123,6 +123,6 @@ const projectData = {
             github: 'https://github.com/Wu-Bowen/CSS_Animations',
         },
     ],
-}
+};
 
-export default projectData
+export default projectData;

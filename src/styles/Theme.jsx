@@ -1,5 +1,5 @@
-import { createTheme } from '@mui/material/styles'
-import { blueGrey } from '@mui/material/colors'
+import { createTheme } from '@mui/material/styles';
+import { blueGrey } from '@mui/material/colors';
 const theme = createTheme({
     palette: {
         primary: {
@@ -19,5 +19,5 @@ const theme = createTheme({
         background: blueGrey[800],
     },
     fontSecondary: '"SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace',
-})
-export default theme
+});
+export default theme;

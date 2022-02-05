@@ -10,7 +10,7 @@ const jobData = {
             roleDescription: [
                 'Leading Migration from Legacy Logic Apps UI to new designer repository',
                 'Literally one month in so this line is just to fill space',
-                'Hello friends! :D'
+                'Hello friends! :D',
             ],
         },
         {
@@ -55,6 +55,6 @@ const jobData = {
             ],
         },
     ],
-}
+};
 
-export default jobData
+export default jobData;

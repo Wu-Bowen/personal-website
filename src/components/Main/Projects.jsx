@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import projectData from './../data/projectData'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import sr from './../../utils/sr'
-import configs from './../../config'
-import { Link } from 'react-router-dom'
-import Icon from './../Icons/Icons'
-import './../../styles/transitions.css'
+import React, { useEffect, useRef, useState } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import projectData from './../data/projectData';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import sr from './../../utils/sr';
+import configs from './../../config';
+import { Link } from 'react-router-dom';
+import Icon from './../Icons/Icons';
+import './../../styles/transitions.css';
 
 const useStyles = makeStyles((theme) => ({
     projectsContainer: {
@@ -191,31 +191,31 @@ const useStyles = makeStyles((theme) => ({
             outline: 'none',
         },
     },
-}))
+}));
 
 const Projects = () => {
-    const [showMore, setShowMore] = useState(false)
-    const classes = useStyles()
-    const revealTitle = useRef(null)
-    const revealArchiveLink = useRef(null)
-    const revealProjects = useRef([])
+    const [showMore, setShowMore] = useState(false);
+    const classes = useStyles();
+    const revealTitle = useRef(null);
+    const revealArchiveLink = useRef(null);
+    const revealProjects = useRef([]);
 
     useEffect(() => {
-        sr.reveal(revealTitle.current, configs.srConfig())
-        sr.reveal(revealArchiveLink.current, configs.srConfig())
+        sr.reveal(revealTitle.current, configs.srConfig());
+        sr.reveal(revealArchiveLink.current, configs.srConfig());
         revealProjects.current.forEach((ref, i) =>
             sr.reveal(ref, configs.srConfig(i * 100))
-        )
-    }, [])
+        );
+    }, []);
 
-    const GRID_LIMIT = 6
+    const GRID_LIMIT = 6;
     const projectsToShow = showMore
         ? projectData?.projects
-        : projectData?.projects.slice(0, GRID_LIMIT)
+        : projectData?.projects.slice(0, GRID_LIMIT);
 
     const openLink = (link) => {
-        window.open(link)
-    }
+        window.open(link);
+    };
 
     return (
         <div
@@ -375,7 +375,7 @@ const Projects = () => {
                                                                     {' '}
                                                                     {tech}{' '}
                                                                 </li>
-                                                            )
+                                                            );
                                                         }
                                                     )}
                                                 </ul>
@@ -384,7 +384,7 @@ const Projects = () => {
                                     </div>
                                 </li>
                             </CSSTransition>
-                        )
+                        );
                     })}
                 </TransitionGroup>
             </ul>
@@ -395,7 +395,7 @@ const Projects = () => {
                 Show {showMore ? 'Less' : 'More'}
             </button>
         </div>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;

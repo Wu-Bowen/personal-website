@@ -1,7 +1,7 @@
-import SpotilyticsImage from './images/spotilytics.PNG'
-import MovieDBImage from './images/movieDB.PNG'
-import ProjectNeo from './images/projectNeo.PNG'
-import MysticVillage from './images/mysticVillage.PNG'
+import SpotilyticsImage from './images/spotilytics.PNG';
+import MovieDBImage from './images/movieDB.PNG';
+import ProjectNeo from './images/projectNeo.PNG';
+import MysticVillage from './images/mysticVillage.PNG';
 
 const featuredData = {
     projects: [
@@ -53,6 +53,6 @@ const featuredData = {
             github: 'https://github.com/Wu-Bowen/mystic_village',
         },
     ],
-}
+};
 
-export default featuredData
+export default featuredData;

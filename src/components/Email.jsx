@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import makeStyles from '@mui/styles/makeStyles'
-import Side from './Side'
-import configs from './../config'
+import React from 'react';
+import PropTypes from 'prop-types';
+import makeStyles from '@mui/styles/makeStyles';
+import Side from './Side';
+import configs from './../config';
 
 const useStyles = makeStyles((theme) => ({
     emailContainer: {
@@ -33,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
             color: theme.palette.primary.textColor,
         },
     },
-}))
+}));
 
 const Email = ({ isHome }) => {
-    const classes = useStyles()
+    const classes = useStyles();
     return (
         <Side isHome={isHome} orientation="right">
             <div className={classes.emailContainer}>
@@ -45,10 +45,10 @@ const Email = ({ isHome }) => {
                 </a>
             </div>
         </Side>
-    )
-}
+    );
+};
 Email.propTypes = {
     isHome: PropTypes.bool,
-}
+};
 
-export default Email
+export default Email;

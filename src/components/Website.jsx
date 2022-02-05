@@ -1,17 +1,13 @@
-import React, { useState } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import Navbar from './Navbar'
-import Email from './Email'
-import Social from './Social'
-import Home from './Home'
-import Loader from './Loader'
-import Intro from './Main/Intro'
-import About from './Main/About'
-import Experience from './Main/Experience'
-import Work from './Main/Work'
-import Projects from './Main/Projects'
-import Contact from './Main/Contact'
-import Footer from './Footer'
+import React, { useState } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import Navbar from './Navbar';
+import Email from './Email';
+import Social from './Social';
+import Home from './Home';
+import Loader from './Loader';
+import Footer from './Footer';
+import NotFoundPage from './Pages/404';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({
     root: {
@@ -24,19 +20,14 @@ const useStyle = makeStyles((theme) => ({
             flexDirection: 'column',
         },
     },
-    // content: {
-    //     flexGrow: 1,
-    //     backgroundColor: theme.palette.background,
-
-    // },
     toolbar: {
         ...theme.mixins.toolbar,
     },
-}))
+}));
 
 const Website = () => {
-    const classes = useStyle()
-    const [isLoading, setIsLoading] = useState(true)
+    const classes = useStyle();
+    const [isLoading, setIsLoading] = useState(true);
     return (
         <>
             {isLoading ? (
@@ -47,19 +38,17 @@ const Website = () => {
                     <Email isHome={true} />
                     <Social isHome={true} />
                     <div className={'content'}>
-                        <Home className={classes.root}>
-                            <Intro />
-                            <About />
-                            <Experience />
-                            <Work />
-                            <Projects />
-                            <Contact />
-                        </Home>
+                        <BrowserRouter>
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route path="*" component={NotFoundPage} />
+                            </Switch>
+                        </BrowserRouter>
                     </div>
                     <Footer />
                 </div>
             )}
         </>
-    )
-}
-export default Website
+    );
+};
+export default Website;
