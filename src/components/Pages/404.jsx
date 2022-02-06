@@ -13,9 +13,10 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '64px',
         color: theme.palette.secondary.textColor,
         fontFamily: '"IBM Plex Serif",Big Caslon,serif',
-        backgroundImage: "url(" + Hotdog + ")",
-        backgroundSize: 'cover',
+        backgroundImage: "url(" + Hotdog + "), linear-gradient(to right, rgb(146, 217, 208), rgb(146, 217, 208))",
+        backgroundRepeat: 'no-repeat',
         height: '100vh',
+        backgroundPosition: '100% 0'
     },
     text: {
         maxWidth: '30vw',
