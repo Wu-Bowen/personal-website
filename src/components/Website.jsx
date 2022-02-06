@@ -38,7 +38,7 @@ const Website = () => {
                     <Email isHome={true} />
                     <Social isHome={true} />
                     <div className={'content'}>
-                        <BrowserRouter>
+                        <BrowserRouter basename={'/'}>
                             <Switch>
                                 <Route exact path="/" component={Home} />
                                 <Route path="*" component={NotFoundPage} />
