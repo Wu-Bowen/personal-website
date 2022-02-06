@@ -130,7 +130,19 @@ const Navbar = ({ isHome }) => {
     }, [isMounted]);
 
     const handleLogo = () => {
-        window.location = window.location.href.split('#')[0];
+        window.location = handleLocation(window.location.href.split('#')[0]);
+    };
+
+    const handleLocation = (location) => {
+        console.log(typeof location);
+        const lastSlash = location.lastIndexOf('/');
+        if (lastSlash === -1) {
+            return location;
+        }
+        if (lastSlash === 0) {
+            return '/';
+        }
+        return location.substring(0, lastSlash);
     };
     return (
         <AppBar
