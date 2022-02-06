@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'grid',
         gridTemplateColumns: '3fr 2fr',
         gap: '50px',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             display: 'block',
         },
     },
@@ -157,7 +157,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex: '1',
     },
     innerText: {
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             paddingBottom: '60px',
         },
     },

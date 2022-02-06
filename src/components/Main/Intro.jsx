@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '0',
         fontSize: '60px',
         color: theme.palette.secondary.main,
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             fontSize: '50px',
         },
     },
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '10px',
         fontSize: '60px',
         color: theme.palette.secondary.textColor,
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             fontSize: '50px',
         },
     },

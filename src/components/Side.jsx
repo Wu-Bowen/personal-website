@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         left: '15px',
         right: 'auto',
         zIndex: '10',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             display: 'none',
         },
     },
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         left: 'auto',
         right: '0px',
         zIndex: '10',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             display: 'none',
         },
     },

@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
         gridGap: '10px',
         gridTemplateColumns: 'repeat(12, 1fr)',
         alignItems: 'center',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             boxShadow: '0px 10px 30px -15px #37474f',
             transition: 'all 0.25s cubic-bezier(0.645,0.045,0.355,1)',
             '&:hover, &:focus': {
@@ -62,10 +62,10 @@ const useStyles = makeStyles((theme) => ({
         },
         '&:not(:last-of-type)': {
             marginBottom: '150px',
-            ['@media (max-width:768px)']: {
+            '@media (max-width:768px)': {
                 marginBottom: '70px',
             },
-            ['@media (max-width:480px)']: {
+            '@media (max-width:480px)': {
                 marginBottom: '30px',
             },
         },
@@ -163,7 +163,7 @@ const useStyles = makeStyles((theme) => ({
                 height: '100%',
             },
         },
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             gridColumn: '1 / -1',
         },
     },
@@ -179,7 +179,7 @@ const useStyles = makeStyles((theme) => ({
                 height: '100%',
             },
         },
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             gridColumn: '1 / -1',
         },
     },

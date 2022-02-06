@@ -172,7 +172,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '3px 20px 20px',
         width: '80%',
         transition: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
-        ['@media (max-width:450px)']: {
+        '@media (max-width:450px)': {
             margin: '0 auto 10px',
             padding: '3px 10px 10px',
             fontSize: '16px',

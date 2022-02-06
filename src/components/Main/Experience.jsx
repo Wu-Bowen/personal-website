@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '0',
         margin: '0',
         listStyle: 'none',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             display: 'flex',
             overflowX: 'auto',
             width: 'calc(100% + 50px)',
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: '-50px',
             marginBottom: '30px',
         },
-        ['@media (max-width:480px)']: {
+        '@media (max-width:480px)': {
             width: 'calc(100% + 25px)',
             paddingLeft: '25px',
             marginLeft: '-25px',
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     },
     inner: {
         display: 'flex',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             display: 'block',
         },
     },
@@ -88,10 +88,10 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '13px',
         textAlign: 'left',
         whiteSpace: 'nowrap',
-        ['@media (max-width:856x)']: {
+        '@media (max-width:856x)': {
             padding: '0 15px 2px',
         },
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
         background: theme.palette.primary.textColor,
         transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
         transitionDelay: '0.1s',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             top: 'auto',
             bottom: '0',
             width: '100%',
@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
             height: '2px',
             marginLeft: '50px',
         },
-        ['@media (max-width:480px)']: {
+        '@media (max-width:480px)': {
             marginLeft: '25px',
         },
     },
@@ -135,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         width: '100%',
         marginLeft: '20px',
-        ['@media (max-width:768px)']: {
+        '@media (max-width:768px)': {
             marginLeft: '0px',
         },
     },
