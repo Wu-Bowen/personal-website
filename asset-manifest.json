@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.608b3a92.chunk.css",
-    "main.js": "./static/js/main.a9be9436.chunk.js",
-    "main.js.map": "./static/js/main.a9be9436.chunk.js.map",
+    "main.css": "./static/css/main.ed7fc3c4.chunk.css",
+    "main.js": "./static/js/main.9bc9b66d.chunk.js",
+    "main.js.map": "./static/js/main.9bc9b66d.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.ffc98865.js",
     "runtime-main.js.map": "./static/js/runtime-main.ffc98865.js.map",
-    "static/js/2.2a95ec9c.chunk.js": "./static/js/2.2a95ec9c.chunk.js",
-    "static/js/2.2a95ec9c.chunk.js.map": "./static/js/2.2a95ec9c.chunk.js.map",
+    "static/js/2.c4dc75a3.chunk.js": "./static/js/2.c4dc75a3.chunk.js",
+    "static/js/2.c4dc75a3.chunk.js.map": "./static/js/2.c4dc75a3.chunk.js.map",
     "static/js/3.d0f7f78d.chunk.js": "./static/js/3.d0f7f78d.chunk.js",
     "static/js/3.d0f7f78d.chunk.js.map": "./static/js/3.d0f7f78d.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.608b3a92.chunk.css.map": "./static/css/main.608b3a92.chunk.css.map",
-    "static/js/2.2a95ec9c.chunk.js.LICENSE.txt": "./static/js/2.2a95ec9c.chunk.js.LICENSE.txt",
+    "static/css/main.ed7fc3c4.chunk.css.map": "./static/css/main.ed7fc3c4.chunk.css.map",
+    "static/js/2.c4dc75a3.chunk.js.LICENSE.txt": "./static/js/2.c4dc75a3.chunk.js.LICENSE.txt",
     "static/media/CO2.2fa0c0f5.pdf": "./static/media/CO2.2fa0c0f5.pdf",
     "static/media/Twitter_Sentiment_Analysis.972baba4.pdf": "./static/media/Twitter_Sentiment_Analysis.972baba4.pdf",
     "static/media/hotdog.0945db05.gif": "./static/media/hotdog.0945db05.gif",
@@ -19,13 +19,13 @@
     "static/media/mysticVillage.000b7457.PNG": "./static/media/mysticVillage.000b7457.PNG",
     "static/media/profileImage.7a7a7019.jpg": "./static/media/profileImage.7a7a7019.jpg",
     "static/media/projectNeo.6a98573d.PNG": "./static/media/projectNeo.6a98573d.PNG",
-    "static/media/resume.ff005c41.pdf": "./static/media/resume.ff005c41.pdf",
+    "static/media/resume.0c02d77c.pdf": "./static/media/resume.0c02d77c.pdf",
     "static/media/spotilytics.9026dc2a.PNG": "./static/media/spotilytics.9026dc2a.PNG"
   },
   "entrypoints": [
     "static/js/runtime-main.ffc98865.js",
-    "static/js/2.2a95ec9c.chunk.js",
-    "static/css/main.608b3a92.chunk.css",
-    "static/js/main.a9be9436.chunk.js"
+    "static/js/2.c4dc75a3.chunk.js",
+    "static/css/main.ed7fc3c4.chunk.css",
+    "static/js/main.9bc9b66d.chunk.js"
   ]
 }
