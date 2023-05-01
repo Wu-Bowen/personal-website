@@ -161,7 +161,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
     },
     link: {
-        padding: '10px',
         display: 'inline-block',
         border: '1px solid transparent',
         textDecoration: 'none',
@@ -192,7 +191,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'transparent',
         border: '1px solid',
         borderRadius: '4px',
-        padding: '1.25rem 1.75rem',
         fontSize: '14px',
         fontFamily: theme.fontSecondary,
         lineHeight: 1,

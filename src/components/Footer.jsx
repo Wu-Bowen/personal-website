@@ -1,6 +1,5 @@
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { blueGrey } from '@mui/material/colors';
 
 const useStyles = makeStyles((theme) => ({
     footerContainer: {

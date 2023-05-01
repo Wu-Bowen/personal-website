@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        height: 'auto',
         minHeight: '64px',
         color: theme.palette.secondary.textColor,
         fontFamily: '"IBM Plex Serif",Big Caslon,serif',

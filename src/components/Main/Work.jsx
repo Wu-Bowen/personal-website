@@ -241,7 +241,7 @@ const Work = () => {
                                 <div
                                     key={i}
                                     className={
-                                        i % 2 == 1
+                                        i % 2 === 1
                                             ? classes.projectContentEven
                                             : classes.projectContentOdd
                                     }
@@ -251,13 +251,14 @@ const Work = () => {
                                 >
                                     <div>
                                         <p className={classes.featuredProject}>
-                                            {' '}
-                                            Featured Project{' '}
+                                            Featured Project
                                         </p>
                                         <h3 className={classes.projectTitle}>
-                                            <a className={classes.titleAnchor}>
+                                            <div
+                                                className={classes.titleAnchor}
+                                            >
                                                 {project.name}
-                                            </a>
+                                            </div>
                                         </h3>
                                         <div
                                             className={
@@ -272,7 +273,7 @@ const Work = () => {
                                             <ul
                                                 className={classes.techStack}
                                                 style={
-                                                    i % 2 == 1
+                                                    i % 2 === 1
                                                         ? {}
                                                         : {
                                                               justifyContent:
@@ -299,7 +300,7 @@ const Work = () => {
                                         <div
                                             className={classes.projectLinks}
                                             style={
-                                                i % 2 == 1
+                                                i % 2 === 1
                                                     ? {
                                                           marginRight: '-10px',
                                                       }
@@ -335,7 +336,7 @@ const Work = () => {
                                 </div>
                                 <div
                                     className={
-                                        i % 2 == 1
+                                        i % 2 === 1
                                             ? classes.projectImageEven
                                             : classes.projectImageOdd
                                     }

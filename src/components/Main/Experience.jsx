@@ -213,6 +213,7 @@ const Experience = () => {
             }
             case KEY_CODES.ENTER: {
                 setCurrentTab(focusedTab);
+                break;
                 // setCurrentTab(focusedTab)
             }
             default: {

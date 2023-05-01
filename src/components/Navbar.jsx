@@ -127,7 +127,7 @@ const Navbar = ({ isHome }) => {
                 window.location.hash = '';
             }
         }
-    }, [isMounted]);
+    }, [isMounted, location.hash]);
 
     const handleLogo = () => {
         window.location = handleLocation(window.location.href.split('#')[0]);

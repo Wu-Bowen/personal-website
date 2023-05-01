@@ -282,7 +282,7 @@ const Projects = () => {
                                                         classes.projectLinks
                                                     }
                                                     style={
-                                                        i % 2 == 1
+                                                        i % 2 === 1
                                                             ? {
                                                                   marginRight:
                                                                       '-10px',

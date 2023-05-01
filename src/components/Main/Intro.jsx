@@ -63,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
     },
     emailLink: {
         display: 'inline-block',
-        marginTop: '20px',
         color: theme.palette.primary.textColor,
         backgroundColor: 'transparent',
         border: '1px solid',
