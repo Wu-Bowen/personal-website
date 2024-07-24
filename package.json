@@ -66,5 +66,9 @@
     },
     "devDependencies": {
         "gh-pages": "^3.2.3"
+    },
+    "optionalDependencies": {
+        "babel-loader": "8.1.0",
+        "webpack": "4.44.2"
     }
 }

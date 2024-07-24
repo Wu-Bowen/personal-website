@@ -4,7 +4,7 @@ import React from 'react';
 const Resume = () => {
     return (
         <div className="App">
-            <a href={Pdf} target="_blank">
+            <a href={Pdf} target="_blank" rel="noreferrer">
                 Download Pdf
             </a>
         </div>

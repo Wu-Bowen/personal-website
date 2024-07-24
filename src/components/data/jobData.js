@@ -8,9 +8,11 @@ const jobData = {
             location: 'Redmond, WA',
             range: 'December 2021 - present',
             roleDescription: [
-                'Leading Migration from Legacy Logic Apps UI to new designer repository',
-                'Literally one month in so this line is just to fill space',
-                'Hello friends! :D',
+                'Led end-to-end development on AI Copilot for Logic Apps, an interactive chatbot to assist workflow creation',
+                'Transitioned overburdened Azure Logic App service to a new designer application, reducing load time by over 70%',
+                'Improved UX interfaces by using modern React and Redux practices',
+                'Built a dependent service by multiple partner teams to provide a seamless experience for users',
+                'Mentored multiple interns and new-hires on Logic Apps Projects: Unit Testing Workflows and Copilot',
             ],
         },
         {
@@ -22,7 +24,7 @@ const jobData = {
             range: 'January 2021 - November 2021',
             roleDescription: [
                 'Revamped long-standing credit risk platform to use a microservice architecture, substantially reducing load time',
-                'Transitioned the web app’s Spring framework to Node’s Express to maintain continuity between front and backend',
+                "Transitioned the web app's Spring framework to Node's Express to maintain continuity between front and backend",
                 'Developed new features including UI/UX changes using React, creation of APIs using Knex and Objection, construction of Oracle Exadata scripts, and contributions to the bank’s reusable component library',
                 'Utilized Jest and React-testing-library for unit testing, RAFT for automated functional testing, and Jenkins for integration testing and deployment',
                 'Worked with container deployment platforms including OpenShift and Ansible',

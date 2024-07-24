@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { Button } from '@mui/material/';
 import { Helmet } from 'react-helmet';
@@ -221,6 +221,7 @@ const Menu = () => {
     let firstFocusableEl;
     let lastFocusableEl;
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const setFocusables = () => {
         menuFocusables = [
             buttonRef.current,
@@ -230,46 +231,49 @@ const Menu = () => {
         lastFocusableEl = menuFocusables[menuFocusables.length - 1];
     };
 
-    const handleBackwardTab = (e) => {
+    const handleBackwardTab = useCallback((e) => {
         if (document.activeElement === firstFocusableEl) {
             e.preventDefault();
             lastFocusableEl.focus();
         }
-    };
+    }, [firstFocusableEl, lastFocusableEl]);
 
-    const handleForwardTab = (e) => {
+    const handleForwardTab = useCallback((e) => {
         if (document.activeElement === lastFocusableEl) {
             e.preventDefault();
             firstFocusableEl.focus();
         }
-    };
+    }, [firstFocusableEl, lastFocusableEl]);
 
-    const onKeyDown = (e) => {
-        switch (e.key) {
-            case KEY_CODES.ESCAPE:
-            case KEY_CODES.ESCAPE_IE11: {
-                setMenuOpen(false);
-                break;
-            }
-
-            case KEY_CODES.TAB: {
-                if (menuFocusables && menuFocusables.length === 1) {
-                    e.preventDefault();
+    const onKeyDown = useCallback(
+        (e) => {
+            switch (e.key) {
+                case KEY_CODES.ESCAPE:
+                case KEY_CODES.ESCAPE_IE11: {
+                    setMenuOpen(false);
                     break;
                 }
-                if (e.shiftKey) {
-                    handleBackwardTab(e);
-                } else {
-                    handleForwardTab(e);
-                }
-                break;
-            }
 
-            default: {
-                break;
+                case KEY_CODES.TAB: {
+                    if (menuFocusables && menuFocusables.length === 1) {
+                        e.preventDefault();
+                        break;
+                    }
+                    if (e.shiftKey) {
+                        handleBackwardTab(e);
+                    } else {
+                        handleForwardTab(e);
+                    }
+                    break;
+                }
+
+                default: {
+                    break;
+                }
             }
-        }
-    };
+        },
+        [handleBackwardTab, handleForwardTab, menuFocusables]
+    );
 
     const onResize = (e) => {
         if (e.currentTarget.innerWidth > 768) {
@@ -287,7 +291,7 @@ const Menu = () => {
             document.removeEventListener('keydown', onKeyDown);
             window.removeEventListener('resize', onResize);
         };
-    }, []);
+    }, [onKeyDown, setFocusables]);
 
     const wrapperRef = useRef();
     useOnClickOutside(wrapperRef, () => setMenuOpen(false));

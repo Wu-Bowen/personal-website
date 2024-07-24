@@ -93,7 +93,7 @@ const Navbar = ({ isHome }) => {
     const [color, setColor] = useState('none');
     const [isMounted, setIsMounted] = useState(!isHome);
     const scrollDirection = useScrollDirection('down');
-    const [scrolledToTop, setScrolledToTop] = useState(true);
+    const [, setScrolledToTop] = useState(true);
 
     const handleScroll = () => {
         setScrolledToTop(window.pageYOffset < 50);
